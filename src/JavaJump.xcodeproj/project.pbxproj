@@ -14,6 +14,7 @@
 		17664CE31E9CDA1B006FE484 /* RgbImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17664CE11E9CDA1B006FE484 /* RgbImage.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E31E5E3A83006D7CBD /* GlutApp.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E61E5ECD67006D7CBD /* App.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
+		20AE1A33208FD20C00B08FE2 /* EntityMob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20AE1A31208FD20C00B08FE2 /* EntityMob.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,8 @@
 		1799B7E41E5E3A83006D7CBD /* GlutApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlutApp.h; sourceTree = "<group>"; };
 		1799B7E61E5ECD67006D7CBD /* App.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
 		1799B7E71E5ECD67006D7CBD /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		20AE1A31208FD20C00B08FE2 /* EntityMob.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EntityMob.cpp; sourceTree = "<group>"; };
+		20AE1A32208FD20C00B08FE2 /* EntityMob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntityMob.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,8 @@
 		173FEEF81AA63A07006CCB85 = {
 			isa = PBXGroup;
 			children = (
+				20AE1A31208FD20C00B08FE2 /* EntityMob.cpp */,
+				20AE1A32208FD20C00B08FE2 /* EntityMob.h */,
 				173FEF171AA63B22006CCB85 /* GLUT.framework */,
 				173FEF151AA63B1B006CCB85 /* OpenGL.framework */,
 				1749D6461E9D3D5C0038BC46 /* TexRect.cpp */,
@@ -139,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */,
+				20AE1A33208FD20C00B08FE2 /* EntityMob.cpp in Sources */,
 				173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */,
 				1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */,
 				17664CE31E9CDA1B006FE484 /* RgbImage.cpp in Sources */,

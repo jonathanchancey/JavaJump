@@ -1,4 +1,4 @@
-#include "TexRect.hpp"
+#include "TexRect.h"
 #include <iostream>
 #include "App.h"
 

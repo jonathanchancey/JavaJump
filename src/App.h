@@ -2,7 +2,7 @@
 #define App_hpp
 
 #include "GlutApp.h"
-#include "TexRect.hpp"
+#include "TexRect.h"
 
 class App: public GlutApp {
     // Maintain app state here
