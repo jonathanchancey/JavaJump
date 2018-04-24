@@ -1,0 +1,5 @@
+﻿  TexRect.cpp
+c:\users\argylestallion\desktop\cse 165\final project\moving_objects\moving_objects\textures\texrect.cpp(72): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\argylestallion\desktop\cse 165\final project\moving_objects\moving_objects\textures\texrect.cpp(76): warning C4305: '-=': truncation from 'double' to 'float'
+App.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  glutapp.vcxproj -> C:\Users\ArgyleStallion\Desktop\CSE 165\Final Project\moving_objects\moving_objects\Textures\visualc15\obj\glutapp_Debug\glutapp.exe
