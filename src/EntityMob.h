@@ -12,24 +12,19 @@ class EntityMob{
 protected:
     std::string name;
     std::string type;
+    std::string image;
     bool left; bool up; bool down; bool right;
     
     
     //hitbox
     float x, y, w, h;
     
-    EntityMob(std::string name, std::string type, float x, float y, float w, float h){
-        this->name = name;
-        this->type = type;
-        this->x = x; this->y = y; this->w = w; this->h = h;
-    }
+    EntityMob();
     
-    void setName(std::string n){
-        this->name = n;
-    }
-    void setType(std::string t){
-        this->type = t;
-    }
+    EntityMob(std::string name, std::string type, std::string image, float x, float y, float w, float h);
+    
+    virtual void setName(std::string n);
+    virtual void setType(std::string t);
 };
 
 

@@ -9,13 +9,11 @@
 class Cloud : public EntityMob{
     
     
-//    Cloud(){
-//        printf("creating cloud");
-//    }
-//
-//
-//    EntityMob::setType("Cloud");
     
+    Cloud(){
+        printf("creating cloud");
+    }
+
 };
 
 #endif /* Cloud_hpp */
