@@ -1,6 +1,10 @@
-
-#include "Cloud.h"
-
-
-//EntityMob::setType("Cloud");
+//
+//#include "Cloud.h"
+//
+//
+//
+//
+//void setImagepath(std::string image){
+//    EntityMob::imagepath = image;
+//}
 

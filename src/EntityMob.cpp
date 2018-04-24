@@ -12,15 +12,15 @@
 EntityMob::EntityMob(){
     this->name = " ";
     this->type = " ";
-    this->image = " ";
+    this->imagepath = " ";
     this->x = 0; this->y = 0; this->w = 0; this->h = 0;
     
 }
 
-EntityMob::EntityMob(std::string name, std::string type, std::string image, float x, float y, float w, float h){
+EntityMob::EntityMob(std::string name, std::string type, std::string imagepath, float x, float y, float w, float h){
     this->name = name;
     this->type = type;
-    this->image = image;
+    this->imagepath = imagepath;
     this->x = x; this->y = y; this->w = w; this->h = h;
 }
 
@@ -30,3 +30,7 @@ void EntityMob::setName(std::string n){
 void EntityMob::setType(std::string t){
     this->type = t;
 }
+void EntityMob::setImagepath(std::string imagepath){
+    this->imagepath = imagepath;
+}
+

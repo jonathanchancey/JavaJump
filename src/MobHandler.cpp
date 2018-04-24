@@ -5,6 +5,10 @@
 
 //spawns mobs off screen right that are moving left
 
+//EntityMob * c1 = new EntityMob("boy1","cloud",);
+//
+//EntityMob::EntityMob(std::string name, std::string type, std::string imagepath, float x, float y, float w, float h){
+//
 
 //draws a white square as a test
 void MobHandler::draw(){
@@ -19,3 +23,4 @@ void MobHandler::draw(){
     glEnd();
 
 }
+

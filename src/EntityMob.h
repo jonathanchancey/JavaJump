@@ -9,10 +9,10 @@
 
 class EntityMob{
     
-protected:
+public:
     std::string name;
     std::string type;
-    std::string image;
+    std::string imagepath;
     bool left; bool up; bool down; bool right;
     
     
@@ -25,6 +25,7 @@ protected:
     
     virtual void setName(std::string n);
     virtual void setType(std::string t);
+    virtual void setImagepath(std::string imagepath);
 };
 
 

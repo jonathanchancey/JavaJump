@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include <vector>
-#include "Cloud.h"
+#include "EntityMob.h"
 
 #if defined WIN32
 #include <freeglut.h>
@@ -26,7 +26,6 @@ protected:
 public:
     void draw();
     
-    Cloud * c1;
     
     
 };
