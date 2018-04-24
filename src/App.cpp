@@ -1,4 +1,5 @@
 #include "App.h"
+#include "MobHandler.h"
 
 static App* singleton;
 
@@ -95,6 +96,10 @@ void App::draw() {
     glColor3d(1.0, 1.0, 1.0);
     
     painting->draw();
+    
+    MobHandler * d;
+    d->draw();
+    
     
     
     //background->draw();

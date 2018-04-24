@@ -3,12 +3,22 @@
 #define MobHandler_hpp
 
 #include <stdio.h>
-#include "GlutApp.h"
 
-class App: public GlutApp{
-    bool left; bool up; bool down; bool right;
-    
-    
+#if defined WIN32
+#include <freeglut.h>
+#elif defined __APPLE__
+#include <GLUT/glut.h>
+#else
+#include <GL/freeglut.h>
+#endif
+
+
+
+
+class MobHandler{
+
+public:
+    void draw();
 };
 
 

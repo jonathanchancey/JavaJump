@@ -12,6 +12,7 @@ class EntityMob{
 protected:
     std::string name;
     std::string type;
+    bool left; bool up; bool down; bool right;
     
     
     //hitbox
