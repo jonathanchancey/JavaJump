@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <vector>
 #include "EntityMob.h"
+#include "tRMob.h"
 
 #if defined WIN32
 #include <freeglut.h>
@@ -20,7 +21,8 @@
 class MobHandler{
     
 protected:
-    std::vector<EntityMob> loadedMobs;
+//    std::vector<EntityMob> loadedMobs;
+    std::vector<tRMob> mobs;
     
     
 public:

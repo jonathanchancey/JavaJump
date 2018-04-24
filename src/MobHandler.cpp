@@ -5,13 +5,17 @@
 
 //spawns mobs off screen right that are moving left
 
-//EntityMob * c1 = new EntityMob("boy1","cloud",);
-//
+
 //EntityMob::EntityMob(std::string name, std::string type, std::string imagepath, float x, float y, float w, float h){
-//
+
 
 //draws a white square as a test
 void MobHandler::draw(){
+    
+//    EntityMob * c1 = new EntityMob("boy1","cloud","cloud.bmp",0,0,.3,.3);
+    
+    tRMob* e = new tRMob("cloud.bmp", 0, 0, 0, 0, 0.5, 0.5);
+    e->draw();
     //J
     glPolygonMode(GL_FRONT, GL_FILL);
     glColor3f(1.0, 0.0 ,0.0);

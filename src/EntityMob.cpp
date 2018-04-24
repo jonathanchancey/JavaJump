@@ -34,3 +34,4 @@ void EntityMob::setImagepath(std::string imagepath){
     this->imagepath = imagepath;
 }
 
+

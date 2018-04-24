@@ -16,6 +16,7 @@
 		1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E61E5ECD67006D7CBD /* App.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		207C0092208FDA0E003D36A9 /* Cloud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207C0091208FDA0E003D36A9 /* Cloud.cpp */; };
 		207C0095208FDB6E003D36A9 /* MobHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207C0094208FDB6E003D36A9 /* MobHandler.cpp */; };
+		207C0098208FF59F003D36A9 /* tRMob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207C0097208FF59F003D36A9 /* tRMob.cpp */; };
 		20AE1A33208FD20C00B08FE2 /* EntityMob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20AE1A31208FD20C00B08FE2 /* EntityMob.cpp */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,8 @@
 		207C0091208FDA0E003D36A9 /* Cloud.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cloud.cpp; sourceTree = "<group>"; };
 		207C0093208FDB6E003D36A9 /* MobHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobHandler.h; sourceTree = "<group>"; };
 		207C0094208FDB6E003D36A9 /* MobHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MobHandler.cpp; sourceTree = "<group>"; };
+		207C0096208FF59F003D36A9 /* tRMob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tRMob.h; sourceTree = "<group>"; };
+		207C0097208FF59F003D36A9 /* tRMob.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tRMob.cpp; sourceTree = "<group>"; };
 		20AE1A31208FD20C00B08FE2 /* EntityMob.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EntityMob.cpp; sourceTree = "<group>"; };
 		20AE1A32208FD20C00B08FE2 /* EntityMob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntityMob.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +83,8 @@
 				1749D6471E9D3D5C0038BC46 /* TexRect.h */,
 				1799B7E61E5ECD67006D7CBD /* App.cpp */,
 				1799B7E71E5ECD67006D7CBD /* App.h */,
+				207C0096208FF59F003D36A9 /* tRMob.h */,
+				207C0097208FF59F003D36A9 /* tRMob.cpp */,
 				1799B7E31E5E3A83006D7CBD /* GlutApp.cpp */,
 				1799B7E41E5E3A83006D7CBD /* GlutApp.h */,
 				173FEF0B1AA63AC4006CCB85 /* app_main.cpp */,
@@ -159,6 +164,7 @@
 				207C0095208FDB6E003D36A9 /* MobHandler.cpp in Sources */,
 				173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */,
 				1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */,
+				207C0098208FF59F003D36A9 /* tRMob.cpp in Sources */,
 				17664CE31E9CDA1B006FE484 /* RgbImage.cpp in Sources */,
 				1749D6481E9D3D5C0038BC46 /* TexRect.cpp in Sources */,
 			);
