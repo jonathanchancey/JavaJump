@@ -11,19 +11,24 @@ class EntityMob{
     
 protected:
     std::string name;
-    int damage;
+    std::string type;
     
     
     //hitbox
     float x, y, w, h;
     
-    EntityMob(std::string name, int damage, float x, float y, float w, float h){
+    EntityMob(std::string name, std::string type, float x, float y, float w, float h){
         this->name = name;
-        this->damage = damage;
+        this->type = type;
         this->x = x; this->y = y; this->w = w; this->h = h;
     }
     
-    
+    void setName(std::string n){
+        this->name = n;
+    }
+    void setType(std::string t){
+        this->type = t;
+    }
 };
 
 

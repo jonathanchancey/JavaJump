@@ -2,26 +2,26 @@
 
 static App* singleton;
 
-/*
-void move(int value){
-    if (singleton->up){
-        singleton->painting->moveUp(0.05);
-    }
-    if (singleton->down){
-        singleton->painting->moveDown(0.05);
-    }
-    if (singleton->left){
-        singleton->painting->moveLeft(0.05);
-    }
-    if (singleton->right){
-        singleton->painting->moveRight(0.05);
-    }
-    if (singleton->up || singleton->down || singleton->left || singleton->right){
-        singleton->redraw();
-        glutTimerFunc(32, move, value);
-    }
-}
-*/
+
+//void move(int value){
+//    if (singleton->up){
+//        singleton->painting->moveUp(0.05);
+//    }
+//    if (singleton->down){
+//        singleton->painting->moveDown(0.05);
+//    }
+//    if (singleton->left){
+//        singleton->painting->moveLeft(0.05);
+//    }
+//    if (singleton->right){
+//        singleton->painting->moveRight(0.05);
+//    }
+//    if (singleton->up || singleton->down || singleton->left || singleton->right){
+//        singleton->redraw();
+//        glutTimerFunc(32, move, value);
+//    }
+//}
+
 
 
 
@@ -95,6 +95,7 @@ void App::draw() {
     glColor3d(1.0, 1.0, 1.0);
     
     painting->draw();
+    
     
     //background->draw();
     

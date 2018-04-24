@@ -28,7 +28,6 @@ public:
     void idle();
     
     TexRect* painting;
-    
     bool up;
     bool down;
     bool left;

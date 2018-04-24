@@ -14,6 +14,8 @@
 		17664CE31E9CDA1B006FE484 /* RgbImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17664CE11E9CDA1B006FE484 /* RgbImage.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E31E5E3A83006D7CBD /* GlutApp.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E61E5ECD67006D7CBD /* App.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
+		207C0092208FDA0E003D36A9 /* Cloud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207C0091208FDA0E003D36A9 /* Cloud.cpp */; };
+		207C0095208FDB6E003D36A9 /* MobHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207C0094208FDB6E003D36A9 /* MobHandler.cpp */; };
 		20AE1A33208FD20C00B08FE2 /* EntityMob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20AE1A31208FD20C00B08FE2 /* EntityMob.cpp */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,10 @@
 		1799B7E41E5E3A83006D7CBD /* GlutApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlutApp.h; sourceTree = "<group>"; };
 		1799B7E61E5ECD67006D7CBD /* App.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
 		1799B7E71E5ECD67006D7CBD /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		207C0090208FDA0E003D36A9 /* Cloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cloud.h; sourceTree = "<group>"; };
+		207C0091208FDA0E003D36A9 /* Cloud.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cloud.cpp; sourceTree = "<group>"; };
+		207C0093208FDB6E003D36A9 /* MobHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobHandler.h; sourceTree = "<group>"; };
+		207C0094208FDB6E003D36A9 /* MobHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MobHandler.cpp; sourceTree = "<group>"; };
 		20AE1A31208FD20C00B08FE2 /* EntityMob.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EntityMob.cpp; sourceTree = "<group>"; };
 		20AE1A32208FD20C00B08FE2 /* EntityMob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntityMob.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +68,10 @@
 		173FEEF81AA63A07006CCB85 = {
 			isa = PBXGroup;
 			children = (
+				207C0093208FDB6E003D36A9 /* MobHandler.h */,
+				207C0094208FDB6E003D36A9 /* MobHandler.cpp */,
+				207C0090208FDA0E003D36A9 /* Cloud.h */,
+				207C0091208FDA0E003D36A9 /* Cloud.cpp */,
 				20AE1A31208FD20C00B08FE2 /* EntityMob.cpp */,
 				20AE1A32208FD20C00B08FE2 /* EntityMob.h */,
 				173FEF171AA63B22006CCB85 /* GLUT.framework */,
@@ -121,7 +131,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 173FEEFC1AA63A07006CCB85 /* Build configuration list for PBXProject "glutapp" */;
+			buildConfigurationList = 173FEEFC1AA63A07006CCB85 /* Build configuration list for PBXProject "JavaJump" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -145,6 +155,8 @@
 			files = (
 				1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */,
 				20AE1A33208FD20C00B08FE2 /* EntityMob.cpp in Sources */,
+				207C0092208FDA0E003D36A9 /* Cloud.cpp in Sources */,
+				207C0095208FDB6E003D36A9 /* MobHandler.cpp in Sources */,
 				173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */,
 				1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */,
 				17664CE31E9CDA1B006FE484 /* RgbImage.cpp in Sources */,
@@ -273,7 +285,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		173FEEFC1AA63A07006CCB85 /* Build configuration list for PBXProject "glutapp" */ = {
+		173FEEFC1AA63A07006CCB85 /* Build configuration list for PBXProject "JavaJump" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				173FEF061AA63A07006CCB85 /* Debug */,

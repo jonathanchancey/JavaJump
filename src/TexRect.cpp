@@ -33,20 +33,20 @@ TexRect::TexRect (const char* filename, int rows, int cols, float x=0, float y=0
 
 }
 
-/*
-void TexRect::moveUp(float rate){
-    y += rate;
-}
-void TexRect::moveDown(float rate){
-    y -= rate;
-}
-void TexRect::moveLeft(float rate){
-    x -= rate;
-}
-void TexRect::moveRight(float rate){
-    x += rate;
-}
-*/
+
+//void TexRect::moveUp(float rate){
+//    y += rate;
+//}
+//void TexRect::moveDown(float rate){
+//    y -= rate;
+//}
+//void TexRect::moveLeft(float rate){
+//    x -= rate;
+//}
+//void TexRect::moveRight(float rate){
+//    x += rate;
+//}
+
 //This was for moving with arrow keys
 
 

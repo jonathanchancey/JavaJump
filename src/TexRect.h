@@ -24,11 +24,11 @@ public:
     void draw();
     
     bool contains(float, float);
-  /*  
-    void moveUp(float rate=0.01);
-    void moveDown(float rate=0.01);
-    void moveLeft(float rate=0.01);
-    void moveRight(float rate=0.01); */
+//    void moveUp(float rate=0.01);
+//    void moveDown(float rate=0.01);
+//    void moveLeft(float rate=0.01);
+//    void moveRight(float rate=0.01);
+   
     
     void jump();
     
