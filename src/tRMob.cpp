@@ -27,10 +27,6 @@ tRMob::tRMob (const char* filename, int rows, int cols, float x=0, float y=0, fl
     this->w = w;
     this->h = h;
     
-    defPos = true;
-    rising = false;
-    falling = false;
-    
 }
 
 
@@ -50,37 +46,7 @@ tRMob::tRMob (const char* filename, int rows, int cols, float x=0, float y=0, fl
 //This was for moving with arrow keys
 
 
-void tRMob::setJavaPos(int value) {
-    javaPos = value;
-    if (javaPos == 0) {
-        defPos = true;
-    }
-    if (javaPos == 1) {
-        //cout << "Spacebar has been pressed" << endl;
-        rising = true;
-    }
-    if (javaPos == 2) {
-        falling = true;
-    }
-}
 
-void tRMob::jump() {
-    if (rising) {
-        y += 0.015;
-    }
-    if(falling) {
-        y -= 0.015;
-    }
-    if (y > 0) {
-        rising = false;
-        falling = true;
-    }
-    if ((y - h) < -1) { //-1 bottom of screen, 0 is middle
-        rising = false;
-        falling = false;
-        defPos = true;
-    }
-}
 void tRMob::draw(){
     
     glBindTexture( GL_TEXTURE_2D, texture_id );

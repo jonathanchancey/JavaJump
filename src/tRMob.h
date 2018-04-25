@@ -30,16 +30,6 @@ public:
     //    void moveRight(float rate=0.01);
     
     
-    void jump();
-    
-    void setJavaPos(int);
-    
-    bool rising;
-    bool falling;
-    bool defPos;
-    int javaPos;
-    
-    
 };
 
 #endif
