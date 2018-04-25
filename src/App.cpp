@@ -108,15 +108,16 @@ void App::draw() {
 
     
     painting->draw();
+    MobHandler * d;
+    d->draw();
 	line1->draw();
 	line2->draw();
 
 
     
-	/* Alec commented this out b/c it prevented his code from copiling 4/24/18 4:58pm
-    MobHandler * d;
-    d->draw();
-	*/
+//    Alec commented this out b/c it prevented his code from copiling 4/24/18 4:58pm
+
+	
 	
 
 	
