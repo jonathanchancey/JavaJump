@@ -123,6 +123,7 @@
     <ClCompile Include="..\MobHandler.cpp" />
     <ClCompile Include="..\RgbImage.cpp" />
     <ClCompile Include="..\TexRect.cpp" />
+    <ClCompile Include="..\tRMob.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App.h" />
@@ -132,6 +133,7 @@
     <ClInclude Include="..\MobHandler.h" />
     <ClInclude Include="..\RgbImage.h" />
     <ClInclude Include="..\TexRect.h" />
+    <ClInclude Include="..\tRMob.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
