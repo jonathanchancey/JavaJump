@@ -17,17 +17,19 @@ class TexRect {
     float w;
     float h;
     GLuint texture_id;
+	GLuint texture_id1;
+	GLuint texture_id2;
 
 public:
-    TexRect (const char*, int, int, float, float, float, float);
+    TexRect (const char*, const char*, const char*, int, int, float, float, float, float);
     
     void draw();
     
     bool contains(float, float);
-//    void moveUp(float rate=0.01);
-//    void moveDown(float rate=0.01);
-//    void moveLeft(float rate=0.01);
-//    void moveRight(float rate=0.01);
+   void moveUp(float rate=0.01);
+   void moveDown(float rate=0.01);
+   void moveLeft(float rate=0.01);
+    void moveRight(float rate=0.01);
    
     
     void jump();
@@ -38,6 +40,8 @@ public:
 	bool falling;
 	bool defPos;
 	int javaPos;
+	void setJavaState(int);
+	int javaState = 0; //0 = default Java, 1 = Cape Java, 2 = Ball Java
 
 
 };

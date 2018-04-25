@@ -117,15 +117,21 @@
   <ItemGroup>
     <ClCompile Include="..\App.cpp" />
     <ClCompile Include="..\app_main.cpp" />
+    <ClCompile Include="..\EntityMob.cpp" />
     <ClCompile Include="..\GlutApp.cpp" />
+    <ClCompile Include="..\Line.cpp" />
+    <ClCompile Include="..\MobHandler.cpp" />
     <ClCompile Include="..\RgbImage.cpp" />
     <ClCompile Include="..\TexRect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\App.h" />
+    <ClInclude Include="..\EntityMob.h" />
     <ClInclude Include="..\GlutApp.h" />
+    <ClInclude Include="..\Line.h" />
+    <ClInclude Include="..\MobHandler.h" />
     <ClInclude Include="..\RgbImage.h" />
-    <ClInclude Include="..\TexRect.hpp" />
+    <ClInclude Include="..\TexRect.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

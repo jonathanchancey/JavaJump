@@ -1,27 +1,31 @@
 #include "App.h"
 #include "MobHandler.h"
+#include "Line.h"
+#include <iostream>
+
+using namespace std;
 
 static App* singleton;
 
 
-//void move(int value){
-//    if (singleton->up){
-//        singleton->painting->moveUp(0.05);
-//    }
-//    if (singleton->down){
-//        singleton->painting->moveDown(0.05);
-//    }
-//    if (singleton->left){
-//        singleton->painting->moveLeft(0.05);
-//    }
-//    if (singleton->right){
-//        singleton->painting->moveRight(0.05);
-//    }
-//    if (singleton->up || singleton->down || singleton->left || singleton->right){
-//        singleton->redraw();
-//        glutTimerFunc(32, move, value);
-//    }
-//}
+void move(int value){
+    if (singleton->up){
+        singleton->painting->moveUp(0.05);
+    }
+    if (singleton->down){
+        singleton->painting->moveDown(0.05);
+    }
+    if (singleton->left){
+        singleton->painting->moveLeft(0.05);
+    }
+    if (singleton->right){
+        singleton->painting->moveRight(0.05);
+    }
+    if (singleton->up || singleton->down || singleton->left || singleton->right){
+        singleton->redraw();
+        glutTimerFunc(32, move, value);
+    }
+}
 
 
 
@@ -35,8 +39,14 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     
     
     
-    //background = new TexRect("wall.bmp", -1, 1, 2, 2);
-    painting = new TexRect("defJava.bmp", 6, 6, -.85, -.5, 0.5, 0.5);
+    //background = new TexRect("wall.bmp", -1, 1, 2, 2);//-.5
+    painting = new TexRect("defJava.bmp","javaCape.bmp","javaBall.bmp", 6, 6, -.85, -.295, 0.5, 0.5);
+	line1 = new Line(-.9, -.8, .9, -.8);
+	// ^ bottom line
+	//keep the X's numbers at .9
+	line2 = new Line(-.9, .8, .9, .8);
+	// ^ top line
+	
 
     up = down = left = right = false;
     
@@ -50,21 +60,21 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
 
 
 void App::specialKeyPress(int key){
-    if (key == 100){
+   /* if (key == 100){
         left = true;
-    }
+    } */
     if (key == 101){
         up = true;
     }
-    if (key == 102){
+   /* if (key == 102){
         right = true;
-    }
+    }*/
     if (key == 103){
         down = true;
     }
-//    move(1);
+    move(1);
 }
-
+//formerly void App::specialKeyUp(int key){
 void App::specialKeyUp(int key){
     if (key == 100) {
         left = false;
@@ -94,11 +104,23 @@ void App::draw() {
     
     // Set Color
     glColor3d(1.0, 1.0, 1.0);
+
+
     
     painting->draw();
+	line1->draw();
+	line2->draw();
+
+
     
+	/* Alec commented this out b/c it prevented his code from copiling 4/24/18 4:58pm
     MobHandler * d;
     d->draw();
+	*/
+	
+
+	
+		
     
     
     
@@ -132,7 +154,7 @@ void App::mouseDrag(float x, float y){
 
 void App::idle(){
     if (moving){
-        painting->jump();
+       // painting->jump();
         redraw();
     }
 	moving = !moving;
@@ -156,9 +178,11 @@ void App::keyPress(unsigned char key) {
     }
     
     if (key == ' '){
-		painting->setJavaPos(1);
+		//painting->setJavaPos(1);
         moving = !moving;
     }
 
+
     
 }
+

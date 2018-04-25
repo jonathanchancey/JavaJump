@@ -3,6 +3,7 @@
 
 #include "GlutApp.h"
 #include "TexRect.h"
+#include "Line.h"
 
 class App: public GlutApp {
     // Maintain app state here
@@ -28,6 +29,8 @@ public:
     void idle();
     
     TexRect* painting;
+	Line* line1;
+	Line* line2;
     bool up;
     bool down;
     bool left;
@@ -35,7 +38,7 @@ public:
     
     bool moving;
 
-	//bool setMoving(bool);
+	bool setMoving(bool);
     
     //TexRect* background;
 };
