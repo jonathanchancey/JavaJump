@@ -1,5 +1,5 @@
 #include "App.h"
-//#include "MobHandler.h"
+#include "MobHandler.h"
 #include "Line.h"
 #include <iostream>
 
@@ -40,7 +40,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     
     
     //background = new TexRect("wall.bmp", -1, 1, 2, 2);//-.5
-    painting = new TexRect("defJava.bmp","javaCape.bmp","javaBall.bmp", 6, 6, -.85, -.295, 0.5, 0.5);
+    painting = new TexRect("defJava.bmp","javaCape.bmp","javaBall.bmp", 6, 6, -.85, -.295, 0.3, 0.3);
 	line1 = new Line(-.9, -.8, .9, -.8);
 	// ^ bottom line
 	//keep the X's numbers at .9
@@ -50,8 +50,6 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
 
     up = down = left = right = false;
     
-    //explode(0);
-    //glutTimerFunc(20, move, 1);
     
     moving = false;
 
@@ -60,15 +58,15 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
 
 
 void App::specialKeyPress(int key){
-   /* if (key == 100){
+    if (key == 100){
         left = true;
-    } */
+    } 
     if (key == 101){
         up = true;
     }
-   /* if (key == 102){
+    if (key == 102){
         right = true;
-    }*/
+    }
     if (key == 103){
         down = true;
     }
@@ -108,14 +106,10 @@ void App::draw() {
 
     
     painting->draw();
-    MobHandler * d;
+   
     d->draw();
 	line1->draw();
 	line2->draw();
-
-
-    
-//    Alec commented this out b/c it prevented his code from copiling 4/24/18 4:58pm
 
 	
 	

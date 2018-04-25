@@ -4,6 +4,7 @@
 #include "GlutApp.h"
 #include "TexRect.h"
 #include "Line.h"
+#include "MobHandler.h"
 
 class App: public GlutApp {
     // Maintain app state here
@@ -31,6 +32,7 @@ public:
     TexRect* painting;
 	Line* line1;
 	Line* line2;
+	MobHandler* d;
     bool up;
     bool down;
     bool left;
