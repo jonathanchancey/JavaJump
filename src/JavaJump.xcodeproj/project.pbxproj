@@ -17,6 +17,7 @@
 		207C0092208FDA0E003D36A9 /* Cloud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207C0091208FDA0E003D36A9 /* Cloud.cpp */; };
 		207C0095208FDB6E003D36A9 /* MobHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207C0094208FDB6E003D36A9 /* MobHandler.cpp */; };
 		207C0098208FF59F003D36A9 /* tRMob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207C0097208FF59F003D36A9 /* tRMob.cpp */; };
+		207C009B20903971003D36A9 /* Line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207C009A20903971003D36A9 /* Line.cpp */; };
 		20AE1A33208FD20C00B08FE2 /* EntityMob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20AE1A31208FD20C00B08FE2 /* EntityMob.cpp */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,8 @@
 		207C0094208FDB6E003D36A9 /* MobHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MobHandler.cpp; sourceTree = "<group>"; };
 		207C0096208FF59F003D36A9 /* tRMob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tRMob.h; sourceTree = "<group>"; };
 		207C0097208FF59F003D36A9 /* tRMob.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tRMob.cpp; sourceTree = "<group>"; };
+		207C009920903971003D36A9 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		207C009A20903971003D36A9 /* Line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Line.cpp; sourceTree = "<group>"; };
 		20AE1A31208FD20C00B08FE2 /* EntityMob.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EntityMob.cpp; sourceTree = "<group>"; };
 		20AE1A32208FD20C00B08FE2 /* EntityMob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntityMob.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +93,8 @@
 				173FEF0B1AA63AC4006CCB85 /* app_main.cpp */,
 				17664CE11E9CDA1B006FE484 /* RgbImage.cpp */,
 				17664CE21E9CDA1B006FE484 /* RgbImage.h */,
+				207C009A20903971003D36A9 /* Line.cpp */,
+				207C009920903971003D36A9 /* Line.h */,
 				173FEF021AA63A07006CCB85 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				207C0098208FF59F003D36A9 /* tRMob.cpp in Sources */,
 				17664CE31E9CDA1B006FE484 /* RgbImage.cpp in Sources */,
 				1749D6481E9D3D5C0038BC46 /* TexRect.cpp in Sources */,
+				207C009B20903971003D36A9 /* Line.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
