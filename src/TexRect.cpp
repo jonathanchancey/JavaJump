@@ -54,7 +54,7 @@ TexRect::TexRect (const char* filename,const char* filename1,const char* filenam
 
 void TexRect::moveUp(float rate){
 
-   if (y > .75) {
+   if (y > .755) {
 	   y += 0;
    }
    else {
@@ -71,10 +71,20 @@ void TexRect::moveDown(float rate){
    
 }
 void TexRect::moveLeft(float rate){
-    x -= rate;
+	if (x < -.98){
+		x += 0;
+	}
+	else {
+		x -= rate;
+	}
 }
 void TexRect::moveRight(float rate){
-    x += rate;
+	if (x > .65) {
+		x += 0;
+	}
+	else {
+		x += rate;
+	}
 }
 
 //This was for moving with arrow keys
