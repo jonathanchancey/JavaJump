@@ -367,3 +367,5 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 src/visualc15/glutapp.vcxproj
+
+src/JavaJump.xcodeproj/project.xcworkspace/xcuserdata/coruscar.xcuserdatad/UserInterfaceState.xcuserstate
