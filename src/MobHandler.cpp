@@ -14,9 +14,9 @@ void MobHandler::draw(){
     
 //    EntityMob * c1 = new EntityMob("boy1","cloud","cloud.bmp",0,0,.3,.3);
     
-    tRMob* e = new tRMob("cloud.bmp", 0, 0, 0, 0, 0.5, 0.5);
+    tRMob* e = new tRMob("images/cloudBig.bmp", 0, 0, 0, 0, 0.5, 0.5);
     e->draw();
-    //J
+    //Rectangle
     glPolygonMode(GL_FRONT, GL_FILL);
     glColor3f(1.0, 0.0 ,0.0);
     glBegin(GL_POLYGON);
