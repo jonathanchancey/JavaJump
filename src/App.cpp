@@ -154,11 +154,13 @@ void App::idle(){
     }
 	moving = !moving;
 }
-/*
+
 bool App::setMoving(bool value) {
 	moving = value;
 
-} */
+	return moving;
+
+} 
 
 
 
