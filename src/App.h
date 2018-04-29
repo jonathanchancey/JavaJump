@@ -3,6 +3,7 @@
 
 #include "GlutApp.h"
 #include "TexRect.h"
+#include "AnimatedRect.h"
 #include "Line.h"
 #include "MobHandler.h"
 
@@ -10,9 +11,6 @@ class App: public GlutApp {
     // Maintain app state here
     float mx;
     float my;
-    
-    
-
 public:
     // Constructor, to initialize state
     App(const char* label, int x, int y, int w, int h);
@@ -28,21 +26,34 @@ public:
     void specialKeyUp(int key);
     
     void idle();
+	/*
     
-    TexRect* painting;
+    TexRect* ball;
+    
+    TexRect* platform;
+    
+    TexRect* background;
+    
+    AnimatedRect* gameOver;
+	
+	*/
+	
+	TexRect* painting;
 	Line* line1;
 	Line* line2;
 	MobHandler* d;
+    
     bool up;
     bool down;
     bool left;
     bool right;
     
     bool moving;
-
 	bool setMoving(bool);
+
+   // bool game_over;
     
-    //TexRect* background;
+    
 };
 
 #endif
