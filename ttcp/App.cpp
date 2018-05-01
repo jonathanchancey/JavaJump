@@ -15,7 +15,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     my = 0.0;
 
     
-    background = new TexRect("background.png", -1, 1, 2, 2);
+    background = new TexRect("images\sky.png", -1, 1, 2, 2);
     up = down = left = right = false;
     
     moving = true;
