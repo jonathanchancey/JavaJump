@@ -12,8 +12,6 @@
 #include <SOIL.h>
 #endif
 
-#include <iostream>
-
 class TexRect {
 public:
     float x;
