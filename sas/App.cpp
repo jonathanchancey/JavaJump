@@ -11,11 +11,12 @@ void app_timer(int value){
     if (singleton->moving){
         singleton->platform->java();
         secondton->Adv();
-        singleton->ball->activate();
-        float bx = singleton->ball->x + singleton->ball->w/2;
-        float by = singleton->ball->y - singleton->ball->h;
-//        float by = singleton->ball->y - singleton->ball->h + 0.1;
-        if (singleton->platform->contains(bx, by)){
+//        singleton->ball->activate();
+        
+//        float bx = singleton->ball->x + singleton->ball->w/2;
+//        float by = singleton->ball->y - singleton->ball->h;
+////        float by = singleton->ball->y - singleton->ball->h + 0.1;
+        if (secondton->ultraContainment(singleton->platform->x+singleton->platform->w/2, singleton->platform->y-singleton->platform->h/2)){
             singleton->moving = false;
             singleton->game_over = true;
             singleton->ball->rising = true;

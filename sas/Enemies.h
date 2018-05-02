@@ -12,6 +12,7 @@ class Enemies {
 public:
     Enemies();
     float speed;
+    float maxSpeed;
     std::vector<Mob*> bones;
     void Adv();
     void addBone();

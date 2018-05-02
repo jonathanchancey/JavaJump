@@ -4,7 +4,8 @@
 
 Enemies::Enemies(){
     //printf("creating Enemies class");
-    speed = .010; // default speed
+    speed = .015; // default speed
+    maxSpeed = .1; // how fast these bones can go
     
     bones.push_back(new Mob("images/bone.png", 0.89, 0, 0.2, 0.2, speed));
 }
@@ -21,19 +22,21 @@ void Enemies::Adv(){
 }
 void Enemies::addBone(){
     bones.push_back(new Mob("images/bone.png", 0.99, 0, 0.2, 0.2, speed));
-    speed += .001;
+    if (speed < maxSpeed)
+        speed += .001;
 }
 // spawns/activates Mobs at base(floor) + random time
+//do this ^ in app
 
 
 //function that iterates through all mobs and checks if java contains
 bool Enemies::ultraContainment(float x, float y){
-    for (int i = 0; i < bones.size();i++){
+    for (int i = 0; i < bones.size(); i++){
         if (bones[i]->contains(x, y)){
-            return false;
+            return true;
         }
     }
-    return true;
+    return false;
 }
 
 void Enemies::draw(){
