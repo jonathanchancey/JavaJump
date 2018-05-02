@@ -35,8 +35,8 @@ TexRect::TexRect (const char* filename, float x=0, float y=0, float w=0.5, float
 
 void TexRect::moveUp(float rate){
     y += rate;
-    if (y < -0.99){
-        y = -0.99;
+    if (y > 0.99){
+        y = 0.99;
     }
 }
 void TexRect::moveDown(float rate){
