@@ -14,4 +14,7 @@
     <ClInclude Include="freeglut\freeglut.h" />
     <ClInclude Include="AnimatedRect.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\sky.png" />
+  </ItemGroup>
 </Project>
