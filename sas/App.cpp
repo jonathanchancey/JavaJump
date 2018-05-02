@@ -8,7 +8,8 @@ void app_timer(int value){
     }
     
     if (singleton->moving){
-        singleton->ball->jump();
+        singleton->platform->java();
+        singleton->ball->activate();
         float bx = singleton->ball->x + singleton->ball->w/2;
         float by = singleton->ball->y - singleton->ball->h;
 //        float by = singleton->ball->y - singleton->ball->h + 0.1;
@@ -65,7 +66,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     background = new TexRect("images/sky.png", -1, 1, 2, 2);
     ball = new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2);
 
-    platform = new TexRect("images/java.png", 0, -0.7, 0.4, 0.3);
+    platform = new TexRect("images/java.png", -.75, 0, 0.4, 0.3);
     
     gameOver = new AnimatedRect("images/game_over.png", 7, 1, -1.0, 0.8, 2, 1.2);
     
@@ -81,13 +82,13 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
 void App::specialKeyPress(int key){
     if (!game_over){
         if (key == 100){
-            left = true;
+            //left = true;
         }
         if (key == 101){
             up = true;
         }
         if (key == 102){
-            right = true;
+            //right = true;
         }
         if (key == 103){
             down = true;
@@ -165,13 +166,14 @@ void App::keyPress(unsigned char key) {
     }
     
     if (key == ' '){
-        ball->x = 0;
-        ball->y = 0.67;
-        ball->yinc = 0.01;
-        ball->xinc = 0.01;
-        ball->rising = false;
-        game_over = false;
-        gameOver->stop();
-        moving = true;
+        platform->velY = .1;
+//        ball->x = 0;
+//        ball->y = 0.67;
+//        ball->yinc = 0.01;
+//        ball->xinc = 0.01;
+//        ball->rising = false;
+//        game_over = false;
+//        gameOver->stop();
+//        moving = true;
     }
 }

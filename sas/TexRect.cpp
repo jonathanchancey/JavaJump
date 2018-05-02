@@ -31,6 +31,8 @@ TexRect::TexRect (const char* filename, float x=0, float y=0, float w=0.5, float
     
     xinc = 0.01;
     yinc = 0.01;
+    
+    gravity = .01; // more descriptive than yinc, but basically yinc
 }
 
 void TexRect::moveUp(float rate){
@@ -59,6 +61,21 @@ void TexRect::moveRight(float rate){
 }
 
 void TexRect::jump(){
+    
+}
+//loop of action
+void TexRect::java(){
+    y += velY;
+    if (y>0){
+        velY -= gravity;
+    } else {
+        velY = 0;
+        y = 0;
+    }
+    
+}
+
+void TexRect::activate(){
     if(rising){
 //        y+=yinc;
         if (movingLeft){

@@ -24,12 +24,18 @@ public:
     void moveRight(float rate=0.01);
     
     void jump();
+    void java();
+    void activate();
     
     bool rising;
     bool movingLeft;
    
     float xinc;
     float yinc;
+    
+    
+    float velY;
+    float gravity;
 };
 
 #endif
