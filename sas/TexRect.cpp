@@ -32,6 +32,8 @@ TexRect::TexRect (const char* filename, float x=0, float y=0, float w=0.5, float
     xinc = 0.01;
     yinc = 0.01;
     
+    jumpAmount = 1;
+    
     gravity = .01; // more descriptive than yinc, but basically yinc
 }
 
@@ -61,7 +63,7 @@ void TexRect::moveRight(float rate){
 }
 
 void TexRect::jump(){
-    
+    // we don't need this anymore thanks to the power of velocity oriented programming.
 }
 //loop of action
 void TexRect::java(){
@@ -71,8 +73,8 @@ void TexRect::java(){
     } else {
         velY = 0;
         y = 0;
+        jumps = jumpAmount; // this is for future implementations of powerups.
     }
-    
 }
 
 void TexRect::activate(){
