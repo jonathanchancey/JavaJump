@@ -166,7 +166,10 @@ void App::keyPress(unsigned char key) {
     }
     
     if (key == ' '){
-        platform->velY = .1;
+        if (platform->jumps > 0){
+            platform->jumps -= 1;
+            platform->velY = .1;
+        }
 //        ball->x = 0;
 //        ball->y = 0.67;
 //        ball->yinc = 0.01;

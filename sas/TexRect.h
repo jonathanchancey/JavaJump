@@ -36,6 +36,9 @@ public:
     
     float velY;
     float gravity;
+    
+    int jumpAmount;
+    int jumps;
 };
 
 #endif
