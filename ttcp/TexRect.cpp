@@ -1,5 +1,7 @@
 #include "TexRect.h"
 
+#include <iostream>
+
 
 TexRect::TexRect (const char* filename, float x=0, float y=0, float w=0.5, float h=0.5){
     
@@ -13,6 +15,11 @@ TexRect::TexRect (const char* filename, float x=0, float y=0, float w=0.5, float
      SOIL_CREATE_NEW_ID,
      SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
      );
+
+	if (0 == texture_id)
+	{
+		printf("SOIL loading error: '%s'\n", SOIL_last_result());
+	}
     
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
