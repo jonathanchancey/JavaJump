@@ -10,7 +10,7 @@ void app_timer(int value){
     
     if (singleton->moving){
         singleton->platform->java();
-        //secondton->Adv();
+        secondton->Adv();
         singleton->ball->activate();
         float bx = singleton->ball->x + singleton->ball->w/2;
         float by = singleton->ball->y - singleton->ball->h;
@@ -63,14 +63,13 @@ void app_timer(int value){
 
 App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w, h){
     // Initialize state variables
-    
-    singleton = this;
     secondton = new Enemies();
+    singleton = this;
     mx = 0.0;
     my = 0.0;
     
-    background = new TexRect("images/sky.png", -1, 1, 2, 2);
-    secondton->addBone();
+//    background = new TexRect("images/sky.png", -1, 1, 2, 2);
+//    secondton->addBone();
     
     ball = new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2);
 
@@ -124,14 +123,15 @@ void App::draw() {
     // Clear the screen
     glClear(GL_COLOR_BUFFER_BIT);
     
-    // Set background color to black
-    glClearColor(0.0, 0.0, 1.0, 1.0);
+    // Set background color to a disgusting pink
+    glClearColor(1.0, .5, 0.5, 1.0);
     
     // Set up the transformations stack
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     
-    background->draw();
+    //background->draw();
+    secondton->draw();
     platform->draw();
     ball->draw();
     gameOver->draw();
@@ -167,8 +167,10 @@ void App::keyPress(unsigned char key) {
         delete ball;
         delete platform;
         delete gameOver;
-        delete background;
+        //delete background;
         delete this;
+        
+        delete secondton;
         
         exit(0);
     }

@@ -16,6 +16,8 @@ public:
     void Adv();
     void addBone();
     bool ultraContainment(float, float);
+    void draw();
+    ~Enemies();
     
 };
 
