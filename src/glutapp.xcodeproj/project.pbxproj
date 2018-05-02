@@ -16,6 +16,13 @@
 		1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E31E5E3A83006D7CBD /* GlutApp.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E61E5ECD67006D7CBD /* App.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		17FD33DD208FF94C00C7FC56 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD33D9208FF4A300C7FC56 /* CoreFoundation.framework */; };
+		2031154A2099428F0001E5CB /* tRMob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2031153F2099428D0001E5CB /* tRMob.cpp */; };
+		2031154B2099428F0001E5CB /* MobHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 203115412099428D0001E5CB /* MobHandler.cpp */; };
+		2031154C2099428F0001E5CB /* Cloud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 203115422099428D0001E5CB /* Cloud.cpp */; };
+		2031154D2099428F0001E5CB /* RgbImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 203115452099428E0001E5CB /* RgbImage.cpp */; };
+		2031154E2099428F0001E5CB /* Line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 203115472099428E0001E5CB /* Line.cpp */; };
+		2031154F2099428F0001E5CB /* EntityMob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 203115492099428F0001E5CB /* EntityMob.cpp */; };
+		203115512099430E0001E5CB /* libs.h in Sources */ = {isa = PBXBuildFile; fileRef = 203115502099430E0001E5CB /* libs.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +53,19 @@
 		1799B7E71E5ECD67006D7CBD /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
 		17FD33D9208FF4A300C7FC56 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		17FD33DB208FF55B00C7FC56 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSOIL.a; sourceTree = "<group>"; };
+		2031153E2099428D0001E5CB /* RgbImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgbImage.h; sourceTree = "<group>"; };
+		2031153F2099428D0001E5CB /* tRMob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tRMob.cpp; sourceTree = "<group>"; };
+		203115402099428D0001E5CB /* Cloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cloud.h; sourceTree = "<group>"; };
+		203115412099428D0001E5CB /* MobHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MobHandler.cpp; sourceTree = "<group>"; };
+		203115422099428D0001E5CB /* Cloud.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cloud.cpp; sourceTree = "<group>"; };
+		203115432099428E0001E5CB /* EntityMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityMob.h; sourceTree = "<group>"; };
+		203115442099428E0001E5CB /* MobHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobHandler.h; sourceTree = "<group>"; };
+		203115452099428E0001E5CB /* RgbImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RgbImage.cpp; sourceTree = "<group>"; };
+		203115462099428E0001E5CB /* tRMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tRMob.h; sourceTree = "<group>"; };
+		203115472099428E0001E5CB /* Line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Line.cpp; sourceTree = "<group>"; };
+		203115482099428E0001E5CB /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		203115492099428F0001E5CB /* EntityMob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EntityMob.cpp; sourceTree = "<group>"; };
+		203115502099430E0001E5CB /* libs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libs.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +86,19 @@
 		173FEEF81AA63A07006CCB85 = {
 			isa = PBXGroup;
 			children = (
+				203115502099430E0001E5CB /* libs.h */,
+				203115422099428D0001E5CB /* Cloud.cpp */,
+				203115402099428D0001E5CB /* Cloud.h */,
+				203115492099428F0001E5CB /* EntityMob.cpp */,
+				203115432099428E0001E5CB /* EntityMob.h */,
+				203115472099428E0001E5CB /* Line.cpp */,
+				203115482099428E0001E5CB /* Line.h */,
+				203115412099428D0001E5CB /* MobHandler.cpp */,
+				203115442099428E0001E5CB /* MobHandler.h */,
+				203115452099428E0001E5CB /* RgbImage.cpp */,
+				2031153E2099428D0001E5CB /* RgbImage.h */,
+				2031153F2099428D0001E5CB /* tRMob.cpp */,
+				203115462099428E0001E5CB /* tRMob.h */,
 				173FEF171AA63B22006CCB85 /* GLUT.framework */,
 				173FEF151AA63B1B006CCB85 /* OpenGL.framework */,
 				1749D6461E9D3D5C0038BC46 /* TexRect.cpp */,
@@ -156,11 +189,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2031154A2099428F0001E5CB /* tRMob.cpp in Sources */,
+				2031154C2099428F0001E5CB /* Cloud.cpp in Sources */,
 				1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */,
 				1708B5422091F634007BA7C1 /* AnimatedRect.cpp in Sources */,
+				2031154F2099428F0001E5CB /* EntityMob.cpp in Sources */,
+				2031154B2099428F0001E5CB /* MobHandler.cpp in Sources */,
 				173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */,
 				1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */,
 				1749D6481E9D3D5C0038BC46 /* TexRect.cpp in Sources */,
+				2031154D2099428F0001E5CB /* RgbImage.cpp in Sources */,
+				2031154E2099428F0001E5CB /* Line.cpp in Sources */,
+				203115512099430E0001E5CB /* libs.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

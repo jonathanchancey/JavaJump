@@ -1,13 +1,7 @@
 #ifndef tRMob_h
 #define tRMob_h
 
-#if defined WIN32
-#include <freeglut.h>
-#elif defined __APPLE__
-#include <GLUT/glut.h>
-#else
-#include <GL/freeglut.h>
-#endif
+#include "libs.h"
 
 #include "RgbImage.h"
 
