@@ -14,7 +14,10 @@ void app_timer(int value){
         float by = singleton->ball->y - singleton->ball->h;
 //        float by = singleton->ball->y - singleton->ball->h + 0.1;
         if (singleton->platform->contains(bx, by)){
+            singleton->moving = false;
+            singleton->game_over = true;
             singleton->ball->rising = true;
+            singleton->gameOver->animate();
             //singleton->ball->yinc +=0.005;
             singleton->ball->xinc = singleton->ball->yinc;
 //            if (singleton->ball->yinc > 0.15){
@@ -64,6 +67,11 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     my = 0.0;
     
     background = new TexRect("images/sky.png", -1, 1, 2, 2);
+    
+    std::vector<TexRect*> bones;
+    bones.push_back(new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2));
+    
+    
     ball = new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2);
 
     platform = new TexRect("images/java.png", -.75, 0, 0.4, 0.3);
@@ -164,9 +172,18 @@ void App::keyPress(unsigned char key) {
         
         exit(0);
     }
+    if (key == 'r'){ // TODO delete the current bones
+        game_over = false;
+        gameOver->stop();
+        moving = true;
+        
+    }
     
     if (key == ' '){
-        platform->velY = .1;
+        if (platform->jumps > 0){
+            platform->jumps -= 1;
+            platform->velY = .06;
+        }
 //        ball->x = 0;
 //        ball->y = 0.67;
 //        ball->yinc = 0.01;

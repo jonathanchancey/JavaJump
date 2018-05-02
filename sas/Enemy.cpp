@@ -1,7 +1,7 @@
-#include "TexRect.h"
+#include "Enemy.h"
 
 
-TexRect::TexRect (const char* filename, float x=0, float y=0, float w=0.5, float h=0.5){
+Enemy::Enemy (const char* filename, float x=0, float y=0, float w=0.5, float h=0.5){
     
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_FLAT);
@@ -29,44 +29,44 @@ TexRect::TexRect (const char* filename, float x=0, float y=0, float w=0.5, float
     rising = false;
     movingLeft = true;
     
-    xinc = 0.018;
+    xinc = 0.01;
     yinc = 0.01;
     
     jumpAmount = 1;
     
-    gravity = .003; // more descriptive than yinc, but basically yinc
+    gravity = .01; // more descriptive than yinc, but basically yinc
 }
 
-void TexRect::moveUp(float rate){
+void Enemy::moveUp(float rate){
     y += rate;
     if (y > 0.99){
         y = 0.99;
     }
 }
-void TexRect::moveDown(float rate){
+void Enemy::moveDown(float rate){
     y -= rate;
     if (y - h < -0.99){
         y = -0.99 + h;
     }
 }
-void TexRect::moveLeft(float rate){
+void Enemy::moveLeft(float rate){
     x -= rate;
     if (x < -0.99){
         x = -0.99;
     }
 }
-void TexRect::moveRight(float rate){
+void Enemy::moveRight(float rate){
     x += rate;
     if (x + w > 0.99){
         x = 0.99 - w;
     }
 }
 
-void TexRect::jump(){
+void Enemy::jump(){
     // we don't need this anymore thanks to the power of velocity oriented programming.
 }
 //loop of action
-void TexRect::java(){
+void Enemy::java(){
     y += velY;
     if (y>0){
         velY -= gravity;
@@ -77,7 +77,7 @@ void TexRect::java(){
     }
 }
 
-void TexRect::activate(){
+void Enemy::activate(){
 //        y+=yinc;
     if (movingLeft){
         x -=xinc;
@@ -94,7 +94,7 @@ void TexRect::activate(){
 //    }
 //    if (x < -0.99) {
 //        movingLeft = false;
-//
+//       
 //    }
     if (x+w > 0.99) {
         movingLeft = true;
@@ -104,7 +104,7 @@ void TexRect::activate(){
 
 
 
-void TexRect::draw(){
+void Enemy::draw(){
     glBindTexture( GL_TEXTURE_2D, texture_id );
     glEnable(GL_TEXTURE_2D);
     
@@ -128,7 +128,7 @@ void TexRect::draw(){
 }
 
 
-bool TexRect::contains(float mx, float my){
+bool Enemy::contains(float mx, float my){
     return mx >= x && mx <= x+w && my <= y && my >= y - h;
 }
 

@@ -1,9 +1,9 @@
-#ifndef TexRect_h
-#define TexRect_h
+#ifndef Enemy_h
+#define Enemy_h
 
 #include "libs.h"
 
-class TexRect {
+class Enemy {
 public:
     float x;
     float y;
@@ -12,7 +12,7 @@ public:
     GLuint texture_id;
 
 
-    TexRect (const char*, float, float, float, float);
+    Enemy (const char*, float, float, float, float);
     
     void draw();
     
