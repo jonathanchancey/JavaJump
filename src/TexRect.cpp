@@ -49,16 +49,14 @@ TexRect::TexRect (const char* filename,const char* filename1,const char* filenam
     this->y = y;
     this->w = w;
     this->h = h;
-    /*
     rising = false;
     movingLeft = true;
-	*/
 	defPos = true;
 	rising = false;
 	falling = false;
-    
-   // xinc = 0.01;
-    //yinc = 0.01;
+//
+//    xinc = 0.01;
+//    yinc = 0.01;
 }
 
 void TexRect::moveUp(float rate){
@@ -181,7 +179,7 @@ void TexRect::jump() {
 */
 
 
-/*
+
 void TexRect::draw(){
     glBindTexture( GL_TEXTURE_2D, texture_id );
     glEnable(GL_TEXTURE_2D);
@@ -204,96 +202,121 @@ void TexRect::draw(){
     
     glDisable(GL_TEXTURE_2D);
 }
-*/
-void TexRect::draw(){
 
-	if (javaState == 0) { //default java
+//void TexRect::draw(){
+//
+//    glBindTexture(GL_TEXTURE_2D, texture_id);
+//    glEnable(GL_TEXTURE_2D);
+//    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+//
+//
+//    glBegin(GL_QUADS);
+//
+//    glColor4f(1, 1, 1, 1); // from template
+//
+//    glTexCoord2f(0, 0);
+//    glVertex2f(x, y - h);
+//
+//    glTexCoord2f(0, 1);
+//    glVertex2f(x, y);
+//
+//    glTexCoord2f(1, 1);
+//    glVertex2f(x + w, y);
+//
+//    glTexCoord2f(1, 0);
+//    glVertex2f(x + w, y - h);
+//
+//    glEnd();
+//
+//    glDisable(GL_TEXTURE_2D);
 
-		glBindTexture(GL_TEXTURE_2D, texture_id);
-		glEnable(GL_TEXTURE_2D);
-		glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-
-
-		glBegin(GL_QUADS);
-
-		glColor4f(1, 1, 1, 1); // from template
-
-		glTexCoord2f(0, 0);
-		glVertex2f(x, y - h);
-
-		glTexCoord2f(0, 1);
-		glVertex2f(x, y);
-
-		glTexCoord2f(1, 1);
-		glVertex2f(x + w, y);
-
-		glTexCoord2f(1, 0);
-		glVertex2f(x + w, y - h);
-
-		glEnd();
-
-		glDisable(GL_TEXTURE_2D);
-	}
-	if (javaState == 1) { //java cape
-
-		glBindTexture(GL_TEXTURE_2D, texture_id1);
-		glEnable(GL_TEXTURE_2D);
-		glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-
-
-		glBegin(GL_QUADS);
-
-		glColor4f(1, 1, 1, 1); // from template
-
-
-		glTexCoord2f(0, 0);
-		glVertex2f(x, y - h);
-
-		glTexCoord2f(0, 1);
-		glVertex2f(x, y);
-
-		glTexCoord2f(1, 1);
-		glVertex2f(x + w, y);
-
-		glTexCoord2f(1, 0);
-		glVertex2f(x + w, y - h);
-
-		glEnd();
-
-		glDisable(GL_TEXTURE_2D);
-
-	}
-
-	if (javaState == 2) { //java ball
-
-		glBindTexture(GL_TEXTURE_2D, texture_id2);
-		glEnable(GL_TEXTURE_2D);
-		glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-
-
-		glBegin(GL_QUADS);
-
-		glColor4f(1, 1, 1, 1); // from template
-
-
-		glTexCoord2f(0, 0);
-		glVertex2f(x, y - h);
-
-		glTexCoord2f(0, 1);
-		glVertex2f(x, y);
-
-		glTexCoord2f(1, 1);
-		glVertex2f(x + w, y);
-
-		glTexCoord2f(1, 0);
-		glVertex2f(x + w, y - h);
-
-		glEnd();
-
-		glDisable(GL_TEXTURE_2D);
-	}
+//    if (javaState == 0) { //default java
+//
+//        glBindTexture(GL_TEXTURE_2D, texture_id);
+//        glEnable(GL_TEXTURE_2D);
+//        glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+//
+//
+//        glBegin(GL_QUADS);
+//
+//        glColor4f(1, 1, 1, 1); // from template
+//
+//        glTexCoord2f(0, 0);
+//        glVertex2f(x, y - h);
+//
+//        glTexCoord2f(0, 1);
+//        glVertex2f(x, y);
+//
+//        glTexCoord2f(1, 1);
+//        glVertex2f(x + w, y);
+//
+//        glTexCoord2f(1, 0);
+//        glVertex2f(x + w, y - h);
+//
+//        glEnd();
+//
+//        glDisable(GL_TEXTURE_2D);
+//    }
+//    if (javaState == 1) { //java cape
+//
+//        glBindTexture(GL_TEXTURE_2D, texture_id1);
+//        glEnable(GL_TEXTURE_2D);
+//        glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+//
+//
+//        glBegin(GL_QUADS);
+//
+//        glColor4f(1, 1, 1, 1); // from template
+//
+//
+//        glTexCoord2f(0, 0);
+//        glVertex2f(x, y - h);
+//
+//        glTexCoord2f(0, 1);
+//        glVertex2f(x, y);
+//
+//        glTexCoord2f(1, 1);
+//        glVertex2f(x + w, y);
+//
+//        glTexCoord2f(1, 0);
+//        glVertex2f(x + w, y - h);
+//
+//        glEnd();
+//
+//        glDisable(GL_TEXTURE_2D);
+//
+//    }
+//
+//    if (javaState == 2) { //java ball
+//
+//        glBindTexture(GL_TEXTURE_2D, texture_id2);
+//        glEnable(GL_TEXTURE_2D);
+//        glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+//
+//
+//        glBegin(GL_QUADS);
+//
+//        glColor4f(1, 1, 1, 1); // from template
+//
+//
+//        glTexCoord2f(0, 0);
+//        glVertex2f(x, y - h);
+//
+//        glTexCoord2f(0, 1);
+//        glVertex2f(x, y);
+//
+//        glTexCoord2f(1, 1);
+//        glVertex2f(x + w, y);
+//
+//        glTexCoord2f(1, 0);
+//        glVertex2f(x + w, y - h);
+//
+//        glEnd();
+//
+//        glDisable(GL_TEXTURE_2D);
+//    }
     
-}
+//}
 
 
 bool TexRect::contains(float mx, float my){

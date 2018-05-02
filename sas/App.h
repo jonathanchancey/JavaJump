@@ -4,8 +4,6 @@
 #include "GlutApp.h"
 #include "TexRect.h"
 #include "AnimatedRect.h"
-#include "Line.h"
-#include "MobHandler.h"
 
 class App: public GlutApp {
     // Maintain app state here
@@ -26,7 +24,6 @@ public:
     void specialKeyUp(int key);
     
     void idle();
-	/*
     
     TexRect* ball;
     
@@ -35,14 +32,6 @@ public:
     TexRect* background;
     
     AnimatedRect* gameOver;
-	
-	*/
-	
-	TexRect* painting;
-    TexRect* java;
-	Line* line1;
-	Line* line2;
-	MobHandler* mobHandlTest;
     
     bool up;
     bool down;
@@ -50,8 +39,6 @@ public:
     bool right;
     
     bool moving;
-	bool setMoving(bool);
-
     bool game_over;
     
     
