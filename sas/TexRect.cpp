@@ -60,7 +60,7 @@ void TexRect::moveRight(float rate){
 
 void TexRect::jump(){
     if(rising){
-        y+=yinc;
+//        y+=yinc;
         if (movingLeft){
             x -=xinc;
         }
@@ -69,7 +69,7 @@ void TexRect::jump(){
         }
     }
     else {
-        y-=yinc;
+//        y-=yinc;
         if (movingLeft){
             x -=xinc;
         }
@@ -78,12 +78,12 @@ void TexRect::jump(){
         }
     }
     
-    if (y > 0.99){
-        rising = false;
-    }
-    if ((y-h) < -0.99){
-        rising = true;
-    }
+//    if (y > 0.99){
+//        rising = false;
+//    }
+//    if ((y-h) < -0.99){
+//        rising = true;
+//    }
     if (x < -0.99) {
         movingLeft = false;
        

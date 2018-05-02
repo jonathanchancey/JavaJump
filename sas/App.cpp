@@ -10,22 +10,23 @@ void app_timer(int value){
     if (singleton->moving){
         singleton->ball->jump();
         float bx = singleton->ball->x + singleton->ball->w/2;
-        float by = singleton->ball->y - singleton->ball->h + 0.1;
+        float by = singleton->ball->y - singleton->ball->h;
+//        float by = singleton->ball->y - singleton->ball->h + 0.1;
         if (singleton->platform->contains(bx, by)){
             singleton->ball->rising = true;
-            singleton->ball->yinc +=0.005;
+            //singleton->ball->yinc +=0.005;
             singleton->ball->xinc = singleton->ball->yinc;
-            if (singleton->ball->yinc > 0.15){
-                singleton->ball->yinc = 0.15;
-            }
+//            if (singleton->ball->yinc > 0.15){
+//                singleton->ball->yinc = 0.15;
+//            }
         }
         
-        if (singleton->ball->y - singleton->ball->h < -0.99){
-            singleton->moving = false;
-            singleton->game_over = true;
-            singleton->gameOver->animate();
-            
-        }
+//        if (singleton->ball->y - singleton->ball->h < -0.99){
+//            singleton->moving = false;
+//            singleton->game_over = true;
+//            singleton->gameOver->animate();
+//
+//        }
     }
     if (singleton->up){
         singleton->platform->moveUp(0.05);
@@ -62,7 +63,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     my = 0.0;
     
     background = new TexRect("images/sky.png", -1, 1, 2, 2);
-    ball = new TexRect("images/mushroom.png", 0, 0.67, 0.2, 0.2);
+    ball = new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2);
 
     platform = new TexRect("images/java.png", 0, -0.7, 0.4, 0.3);
     
