@@ -7,45 +7,45 @@ using namespace std;
 
 static App* singleton;
 
-/*
+
 void app_timer(int value){
-    if (singleton->game_over){
-        singleton->gameOver->advance();
-    }
-    
-    if (singleton->moving){
-        singleton->ball->jump();
-        float bx = singleton->ball->x + singleton->ball->w/2;
-        float by = singleton->ball->y - singleton->ball->h + 0.1;
-        if (singleton->platform->contains(bx, by)){
-            singleton->ball->rising = true;
-            singleton->ball->yinc +=0.005;
-            singleton->ball->xinc = singleton->ball->yinc;
-            if (singleton->ball->yinc > 0.15){
-                singleton->ball->yinc = 0.15;
-            }
-        }
-        
-        if (singleton->ball->y - singleton->ball->h < -0.99){
-            singleton->moving = false;
-            singleton->game_over = true;
-            singleton->gameOver->animate();
-            
-        }
-    }
+//    if (singleton->game_over){
+//        singleton->gameOver->advance();
+//    }
+//
+//    if (singleton->moving){
+//        singleton->ball->jump();
+//        float bx = singleton->ball->x + singleton->ball->w/2;
+//        float by = singleton->ball->y - singleton->ball->h + 0.1;
+//        if (singleton->platform->contains(bx, by)){
+//            singleton->ball->rising = true;
+//            singleton->ball->yinc +=0.005;
+//            singleton->ball->xinc = singleton->ball->yinc;
+//            if (singleton->ball->yinc > 0.15){
+//                singleton->ball->yinc = 0.15;
+//            }
+//        }
+//
+//        if (singleton->ball->y - singleton->ball->h < -0.99){
+//            singleton->moving = false;
+//            singleton->game_over = true;
+//            singleton->gameOver->animate();
+//
+//        }
+//    }
     if (singleton->up){
-        singleton->platform->moveUp(0.05);
+        singleton->java->moveUp(0.05);
     }
     if (singleton->down){
-        singleton->platform->moveDown(0.05);
+        singleton->java->moveDown(0.05);
     }
     if (singleton->left){
-        singleton->platform->moveLeft(0.05);
+        singleton->java->moveLeft(0.05);
     }
     if (singleton->right){
-        singleton->platform->moveRight(0.05);
+        singleton->java->moveRight(0.05);
     }
-    
+//
     if (singleton->game_over){
         singleton->redraw();
         glutTimerFunc(100, app_timer, value);
@@ -56,11 +56,10 @@ void app_timer(int value){
             glutTimerFunc(16, app_timer, value);
         }
     }
-    
-    
+//
+//
 }
 
-*/
 
 App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w, h){
     // Initialize state variables
@@ -70,9 +69,9 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     my = 0.0;
 	
 	
-	painting = new TexRect("images/defJava.png","images/javaCape.png","images/javaBall.png", 6, 6, -.85, -.295, 0.3, 0.3);
+	java = new TexRect("images/defJava.png","images/javaCape.png","images/javaBall.png", 6, 6, -.85, -.295, 0.3, 0.3);
 	//painting = new TexRect("images/defJava.png", "images/javaCape.png", "images/javaBall.png", -.85, -.295, 0.3, 0.3);
-	line1 = new Line(-.9, -.8, .9, -.8);
+	line1 = new Line(-1, -.8, 1, -.8);
 	// ^ bottom line
 	//keep the X's numbers at .9
 	line2 = new Line(-.9, .8, .9, .8);
@@ -90,14 +89,14 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     up = down = left = right = false;
     
     moving = false; //true in template
-   // game_over = false;
+    game_over = false;
     
-   // app_timer(1);
+    app_timer(1);
 
 }
 
 void App::specialKeyPress(int key){
-  // if (!game_over){
+   if (!game_over){
         if (key == 100){
             left = true;
         }
@@ -111,7 +110,7 @@ void App::specialKeyPress(int key){
             down = true;
         }
 		move(1);
- //   }
+    }
 }
 
 void App::specialKeyUp(int key){
@@ -151,7 +150,7 @@ void App::draw() {
 	*/
 	painting->draw();
    
-    d->draw();
+    mobHandlTest->draw();
 	line1->draw();
 	line2->draw();
     

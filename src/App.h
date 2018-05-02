@@ -39,9 +39,10 @@ public:
 	*/
 	
 	TexRect* painting;
+    TexRect* java;
 	Line* line1;
 	Line* line2;
-	MobHandler* d;
+	MobHandler* mobHandlTest;
     
     bool up;
     bool down;
@@ -51,7 +52,7 @@ public:
     bool moving;
 	bool setMoving(bool);
 
-   // bool game_over;
+    bool game_over;
     
     
 };
