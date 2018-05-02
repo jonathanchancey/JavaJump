@@ -1,6 +1,7 @@
 #include "App.h"
 
 static App* singleton;
+static Enemies* secondton;
 
 void app_timer(int value){
     if (singleton->game_over){
@@ -9,6 +10,7 @@ void app_timer(int value){
     
     if (singleton->moving){
         singleton->platform->java();
+        //secondton->Adv();
         singleton->ball->activate();
         float bx = singleton->ball->x + singleton->ball->w/2;
         float by = singleton->ball->y - singleton->ball->h;
@@ -63,14 +65,12 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     // Initialize state variables
     
     singleton = this;
+    secondton = new Enemies();
     mx = 0.0;
     my = 0.0;
     
     background = new TexRect("images/sky.png", -1, 1, 2, 2);
-    
-    std::vector<TexRect*> bones;
-    bones.push_back(new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2));
-    
+    secondton->addBone();
     
     ball = new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2);
 
@@ -178,8 +178,12 @@ void App::keyPress(unsigned char key) {
         moving = true;
         
     }
+    if (key == 'a'){
+        secondton->addBone();
+    }
     
     if (key == ' '){
+//        secondton->addBone();
         if (platform->jumps > 0){
             platform->jumps -= 1;
             platform->velY = .06;

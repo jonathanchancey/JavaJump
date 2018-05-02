@@ -1,9 +1,10 @@
 #ifndef Enemy_h
 #define Enemy_h
 
-#include "libs.h"
+#include "GlutApp.h"
+//#include "libs.h"
 
-class Enemy {
+class Mob {
 public:
     float x;
     float y;
@@ -12,7 +13,7 @@ public:
     GLuint texture_id;
 
 
-    Enemy (const char*, float, float, float, float);
+    Mob (const char*, float, float, float, float, float);
     
     void draw();
     

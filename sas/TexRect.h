@@ -13,6 +13,7 @@ public:
 
 
     TexRect (const char*, float, float, float, float);
+    ~TexRect();
     
     void draw();
     

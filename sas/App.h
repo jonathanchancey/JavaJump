@@ -4,7 +4,9 @@
 #include "GlutApp.h"
 #include "TexRect.h"
 #include "AnimatedRect.h"
+#include "Enemies.h"
 #include <vector>
+
 
 class App: public GlutApp {
     // Maintain app state here

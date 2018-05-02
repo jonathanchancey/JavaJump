@@ -1,7 +1,7 @@
-#include "Enemy.h"
+#include "Mob.h"
 
 
-Enemy::Enemy (const char* filename, float x=0, float y=0, float w=0.5, float h=0.5){
+Mob::Mob (const char* filename, float x=0, float y=0, float w=0.5, float h=0.5,float speed=.010){
     
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_FLAT);
@@ -29,7 +29,7 @@ Enemy::Enemy (const char* filename, float x=0, float y=0, float w=0.5, float h=0
     rising = false;
     movingLeft = true;
     
-    xinc = 0.01;
+    xinc = speed;
     yinc = 0.01;
     
     jumpAmount = 1;
@@ -37,47 +37,32 @@ Enemy::Enemy (const char* filename, float x=0, float y=0, float w=0.5, float h=0
     gravity = .01; // more descriptive than yinc, but basically yinc
 }
 
-void Enemy::moveUp(float rate){
+void Mob::moveUp(float rate){
     y += rate;
     if (y > 0.99){
         y = 0.99;
     }
 }
-void Enemy::moveDown(float rate){
+void Mob::moveDown(float rate){
     y -= rate;
     if (y - h < -0.99){
         y = -0.99 + h;
     }
 }
-void Enemy::moveLeft(float rate){
+void Mob::moveLeft(float rate){
     x -= rate;
     if (x < -0.99){
         x = -0.99;
     }
 }
-void Enemy::moveRight(float rate){
+void Mob::moveRight(float rate){
     x += rate;
     if (x + w > 0.99){
         x = 0.99 - w;
     }
 }
 
-void Enemy::jump(){
-    // we don't need this anymore thanks to the power of velocity oriented programming.
-}
-//loop of action
-void Enemy::java(){
-    y += velY;
-    if (y>0){
-        velY -= gravity;
-    } else {
-        velY = 0;
-        y = 0;
-        jumps = jumpAmount; // this is for future implementations of powerups.
-    }
-}
-
-void Enemy::activate(){
+void Mob::activate(){
 //        y+=yinc;
     if (movingLeft){
         x -=xinc;
@@ -104,7 +89,7 @@ void Enemy::activate(){
 
 
 
-void Enemy::draw(){
+void Mob::draw(){
     glBindTexture( GL_TEXTURE_2D, texture_id );
     glEnable(GL_TEXTURE_2D);
     
@@ -128,7 +113,7 @@ void Enemy::draw(){
 }
 
 
-bool Enemy::contains(float mx, float my){
+bool Mob::contains(float mx, float my){
     return mx >= x && mx <= x+w && my <= y && my >= y - h;
 }
 

@@ -1,5 +1,3 @@
-
-
 //all libraries are here
 
 #if defined WIN32

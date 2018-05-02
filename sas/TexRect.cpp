@@ -127,6 +127,11 @@ void TexRect::draw(){
     glDisable(GL_TEXTURE_2D);
 }
 
+TexRect::~TexRect(){
+//    SOIL_free_image_data(filename); not sure which to free
+    
+}
+
 
 bool TexRect::contains(float mx, float my){
     return mx >= x && mx <= x+w && my <= y && my >= y - h;

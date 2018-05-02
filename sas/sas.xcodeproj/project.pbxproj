@@ -17,7 +17,8 @@
 		1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E61E5ECD67006D7CBD /* App.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		17FD33DD208FF94C00C7FC56 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD33D9208FF4A300C7FC56 /* CoreFoundation.framework */; };
 		20A0A8F5209A5AE7007C0EAD /* Line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A0A8F3209A5AE7007C0EAD /* Line.cpp */; };
-		20A0A8F9209A6C5B007C0EAD /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A0A8F7209A6C5B007C0EAD /* Enemy.cpp */; };
+		20A0A8F9209A6C5B007C0EAD /* Mob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A0A8F7209A6C5B007C0EAD /* Mob.cpp */; };
+		20A0A8FC209A73A0007C0EAD /* Enemies.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A0A8FB209A73A0007C0EAD /* Enemies.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,8 +52,10 @@
 		20A0A8F3209A5AE7007C0EAD /* Line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Line.cpp; sourceTree = "<group>"; };
 		20A0A8F4209A5AE7007C0EAD /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		20A0A8F6209A5B33007C0EAD /* libs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libs.h; sourceTree = "<group>"; };
-		20A0A8F7209A6C5B007C0EAD /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
-		20A0A8F8209A6C5B007C0EAD /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		20A0A8F7209A6C5B007C0EAD /* Mob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mob.cpp; sourceTree = "<group>"; };
+		20A0A8F8209A6C5B007C0EAD /* Mob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mob.h; sourceTree = "<group>"; };
+		20A0A8FA209A73A0007C0EAD /* Enemies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enemies.h; sourceTree = "<group>"; };
+		20A0A8FB209A73A0007C0EAD /* Enemies.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Enemies.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +80,10 @@
 				173FEF151AA63B1B006CCB85 /* OpenGL.framework */,
 				1749D6461E9D3D5C0038BC46 /* TexRect.cpp */,
 				1749D6471E9D3D5C0038BC46 /* TexRect.h */,
-				20A0A8F7209A6C5B007C0EAD /* Enemy.cpp */,
-				20A0A8F8209A6C5B007C0EAD /* Enemy.h */,
+				20A0A8FB209A73A0007C0EAD /* Enemies.cpp */,
+				20A0A8FA209A73A0007C0EAD /* Enemies.h */,
+				20A0A8F7209A6C5B007C0EAD /* Mob.cpp */,
+				20A0A8F8209A6C5B007C0EAD /* Mob.h */,
 				20A0A8F6209A5B33007C0EAD /* libs.h */,
 				1708B5402091F634007BA7C1 /* AnimatedRect.cpp */,
 				1708B5412091F634007BA7C1 /* AnimatedRect.h */,
@@ -170,7 +175,8 @@
 			files = (
 				1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */,
 				1708B5422091F634007BA7C1 /* AnimatedRect.cpp in Sources */,
-				20A0A8F9209A6C5B007C0EAD /* Enemy.cpp in Sources */,
+				20A0A8FC209A73A0007C0EAD /* Enemies.cpp in Sources */,
+				20A0A8F9209A6C5B007C0EAD /* Mob.cpp in Sources */,
 				173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */,
 				20A0A8F5209A5AE7007C0EAD /* Line.cpp in Sources */,
 				1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */,
