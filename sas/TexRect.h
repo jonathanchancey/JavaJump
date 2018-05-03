@@ -40,6 +40,8 @@ public:
     
     int jumpAmount;
     int jumps;
+    
+    bool duck;
 };
 
 #endif

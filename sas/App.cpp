@@ -71,7 +71,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     mx = 0.0;
     my = 0.0;
     
-//    background = new TexRect("images/sky.png", -1, 1, 2, 2);
+    background = new TexRect("images/sky.png", -1, 1, 2, 2);
 //    secondton->addBone();
     
     ball = new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2);
@@ -95,13 +95,22 @@ void App::specialKeyPress(int key){
             //left = true;
         }
         if (key == 101){
-            up = true;
+            if (platform->jumps > 0){
+                platform->gravity = .003;
+                platform->jumps -= 1;
+                platform->velY = .06;
+            }
+//            up = true;
         }
         if (key == 102){
             //right = true;
         }
         if (key == 103){
-            down = true;
+            platform->velY -= .015;
+            if (platform->y <= 0){
+                platform->duck = true;
+            }
+            //down = true;
         }
     }
 }
@@ -111,6 +120,7 @@ void App::specialKeyUp(int key){
         left = false;
     }
     if (key == 101) {
+        platform->gravity = .006;
         up = false;
     }
     if (key == 102) {
@@ -118,6 +128,9 @@ void App::specialKeyUp(int key){
     }
     if (key == 103) {
         down = false;
+        if (platform->y <= 0){
+            platform->duck = false;
+        }
     }
 }
 
@@ -133,7 +146,7 @@ void App::draw() {
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     
-    //background->draw();
+    background->draw();
     secondton->draw();
     platform->draw();
     ball->draw();
@@ -170,7 +183,7 @@ void App::keyPress(unsigned char key) {
         delete ball;
         delete platform;
         delete gameOver;
-        //delete background;
+        delete background;
         delete this;
         
         delete secondton;
@@ -203,4 +216,9 @@ void App::keyPress(unsigned char key) {
 //        gameOver->stop();
 //        moving = true;
     }
+}
+void App::keyUp(unsigned char key) {
+//    if (key == ' '){
+//        platform->gravity = .006;
+//    }
 }

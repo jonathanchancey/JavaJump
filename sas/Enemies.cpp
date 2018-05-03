@@ -13,9 +13,21 @@ Enemies::Enemies(){
 }
 
 void Enemies::Adv(){
+    
+    std::random_device rd; // obtain a random number from hardware
+    std::mt19937 eng(rd()); // seed the generator
+//    std::uniform_int_distribution<> distr(0, 40); // define the range
+    std::uniform_int_distribution<int> uid(0,40); // random dice
+    rTime = uid(eng); // use rng as a generator
+    
+//    for(int n=0; n<40; ++n)
+//        rTime = distr(eng); // generate numbers
+    
     mobTimer += 1;
-    rTime = (rand() % 20);
+//    rTime = (rand() % 100);
+    
     if (mobTimer > (minTimeBetwnMob + rTime)){
+//        printf("rTime = %d\n",rTime);
         addBone();
         mobTimer = 0;
     }

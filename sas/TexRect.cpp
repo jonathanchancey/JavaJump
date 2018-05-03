@@ -33,7 +33,7 @@ TexRect::TexRect (const char* filename, float x=0, float y=0, float w=0.5, float
     yinc = 0.01;
     
     jumpAmount = 1;
-    
+    duck == false;
     gravity = .003; // more descriptive than yinc, but basically yinc
 }
 

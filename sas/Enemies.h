@@ -6,7 +6,9 @@
 #include "libs.h"
 #include "Mob.h"
 #include <vector>
-#include <cstdlib>
+//#include <cstdlib>
+#include <random>
+
 
 
 class Enemies {
