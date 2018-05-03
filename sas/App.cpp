@@ -11,6 +11,8 @@ void app_timer(int value){
     if (singleton->moving){
         singleton->platform->java();
         secondton->Adv();
+        
+        
 //        singleton->ball->activate();
         
 //        float bx = singleton->ball->x + singleton->ball->w/2;
@@ -19,10 +21,10 @@ void app_timer(int value){
         if (secondton->ultraContainment(singleton->platform->x+singleton->platform->w/2, singleton->platform->y-singleton->platform->h/2)){
             singleton->moving = false;
             singleton->game_over = true;
-            singleton->ball->rising = true;
+//            singleton->ball->rising = true;
             singleton->gameOver->animate();
             //singleton->ball->yinc +=0.005;
-            singleton->ball->xinc = singleton->ball->yinc;
+//            singleton->ball->xinc = singleton->ball->yinc;
 //            if (singleton->ball->yinc > 0.15){
 //                singleton->ball->yinc = 0.15;
 //            }
@@ -176,6 +178,7 @@ void App::keyPress(unsigned char key) {
         exit(0);
     }
     if (key == 'r'){ // TODO delete the current bones
+        
         game_over = false;
         gameOver->stop();
         moving = true;

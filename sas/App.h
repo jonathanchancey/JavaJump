@@ -6,6 +6,7 @@
 #include "AnimatedRect.h"
 #include "Enemies.h"
 #include <vector>
+#include <cstdlib>
 
 
 class App: public GlutApp {
@@ -43,7 +44,6 @@ public:
     
     bool moving;
     bool game_over;
-    
     
 };
 

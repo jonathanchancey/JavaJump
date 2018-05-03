@@ -6,16 +6,24 @@ Enemies::Enemies(){
     //printf("creating Enemies class");
     speed = .015; // default speed
     maxSpeed = .1; // how fast these bones can go
+    mobTimer = 0;
+    minTimeBetwnMob = 50;
     
     bones.push_back(new Mob("images/bone.png", 0.89, 0, 0.2, 0.2, speed));
 }
 
 void Enemies::Adv(){
+    mobTimer += 1;
+    rTime = (rand() % 20);
+    if (mobTimer > (minTimeBetwnMob + rTime)){
+        addBone();
+        mobTimer = 0;
+    }
     for(int i = 0; i < bones.size(); i++){
         //deletes offscreen bones
-//        if (bones[i]->x < .99){
-//            bones.erase(bones.begin() + i-1);
-//        }
+        if (bones[i]->x < -1.1){
+            bones.erase(bones.begin() + i-1);
+        }
         //make bones move left and be dangerous
         bones[i]->activate();
     }
