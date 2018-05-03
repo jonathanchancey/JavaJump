@@ -4,12 +4,18 @@
 
 Enemies::Enemies(){
     //printf("creating Enemies class");
-    speed = .015; // default speed
-    maxSpeed = .1; // how fast these bones can go
+    speed = .02; // default speed
+    maxSpeed = .15; // how fast these bones can go
     mobTimer = 0;
     minTimeBetwnMob = 50;
     
     bones.push_back(new Mob("images/bone.png", 0.89, 0, 0.2, 0.2, speed));
+}
+void Enemies::reset(){
+    speed = .02;
+    mobTimer = 0;
+    bones.clear();
+    addBone();
 }
 
 void Enemies::Adv(){
@@ -20,8 +26,6 @@ void Enemies::Adv(){
     std::uniform_int_distribution<int> uid(0,40); // random dice
     rTime = uid(eng); // use rng as a generator
     
-//    for(int n=0; n<40; ++n)
-//        rTime = distr(eng); // generate numbers
     
     mobTimer += 1;
 //    rTime = (rand() % 100);
@@ -45,6 +49,19 @@ void Enemies::addBone(){
     if (speed < maxSpeed)
         speed += .001;
 }
+
+void Enemies::addSmallBone(){
+    bones.push_back(new Mob("images/bone.png", 0.99, 0, 0.2, 0.2, speed));
+    if (speed < maxSpeed)
+        speed += .001;
+}
+
+void Enemies::addThiccBone(){
+    bones.push_back(new Mob("images/bone.png", 0.99, 0, 0.2, 0.2, speed));
+    if (speed < maxSpeed)
+        speed += .001;
+}
+
 // spawns/activates Mobs at base(floor) + random time
 //do this ^ in app
 

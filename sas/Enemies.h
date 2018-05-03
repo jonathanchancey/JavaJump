@@ -19,6 +19,10 @@ public:
     int mobTimer;
     int minTimeBetwnMob;
     int rTime;
+    void reset();
+    
+    void addSmallBone();
+    void addThiccBone();
     
     std::vector<Mob*> bones;
     void Adv();

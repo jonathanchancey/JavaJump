@@ -8,6 +8,9 @@ GlutApp::GlutApp(const char* label, int x, int y, int w, int h) {
     app = this;
     
     // Setup window position, size, and title
+    width = w;
+    height = h;
+    
     glutInitWindowPosition(x, y);
     glutInitWindowSize(w, h);
     glutCreateWindow(label);
@@ -57,6 +60,8 @@ void GlutApp::draw(){
     // Set up the transformations stack
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
+    gluPerspective(60 * (float)width/height, (float)width/height, 0.01f, 100.0f);
+
     
     // We have been drawing everything to the back buffer
     // Swap the buffers to see the result of what we drew

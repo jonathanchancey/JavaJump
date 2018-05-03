@@ -7,6 +7,7 @@ int main(int argc, char** argv) {
     
     // Instantiate a new App
     App* myApp = new App("MyApp", 50, 50, 600, 600);
+    
 
 	// Start the app
     myApp->run();

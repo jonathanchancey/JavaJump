@@ -11,31 +11,11 @@ void app_timer(int value){
     if (singleton->moving){
         singleton->platform->java();
         secondton->Adv();
-        
-        
-//        singleton->ball->activate();
-        
-//        float bx = singleton->ball->x + singleton->ball->w/2;
-//        float by = singleton->ball->y - singleton->ball->h;
-////        float by = singleton->ball->y - singleton->ball->h + 0.1;
         if (secondton->ultraContainment(singleton->platform->x+singleton->platform->w/2, singleton->platform->y-singleton->platform->h/2)){
             singleton->moving = false;
             singleton->game_over = true;
-//            singleton->ball->rising = true;
             singleton->gameOver->animate();
-            //singleton->ball->yinc +=0.005;
-//            singleton->ball->xinc = singleton->ball->yinc;
-//            if (singleton->ball->yinc > 0.15){
-//                singleton->ball->yinc = 0.15;
-//            }
         }
-        
-//        if (singleton->ball->y - singleton->ball->h < -0.99){
-//            singleton->moving = false;
-//            singleton->game_over = true;
-//            singleton->gameOver->animate();
-//
-//        }
     }
     if (singleton->up){
         singleton->platform->moveUp(0.05);
@@ -195,6 +175,7 @@ void App::keyPress(unsigned char key) {
         game_over = false;
         gameOver->stop();
         moving = true;
+        secondton->reset();
         
     }
     if (key == 'a'){
