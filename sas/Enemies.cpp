@@ -7,9 +7,8 @@ Enemies::Enemies(){
     speed = .02; // default speed
     maxSpeed = .15; // how fast these bones can go
     mobTimer = 0;
-    minTimeBetwnMob = 50;
-    
-    bones.push_back(new Mob("images/bone.png", 0.89, 0, 0.2, 0.2, speed));
+    minTimeBetwnMob = 42;
+    addBone();
 }
 void Enemies::reset(){
     speed = .02;
@@ -32,7 +31,14 @@ void Enemies::Adv(){
     
     if (mobTimer > (minTimeBetwnMob + rTime)){
 //        printf("rTime = %d\n",rTime);
-        addBone();
+        
+        if (mobTimer % 3 == 0){
+            addBone();
+        } else if (mobTimer % 3 == 1){
+            addLongBone();
+        } else {
+            addThiccBone();
+        }
         mobTimer = 0;
     }
     for(int i = 0; i < bones.size(); i++){
@@ -45,19 +51,19 @@ void Enemies::Adv(){
     }
 }
 void Enemies::addBone(){
-    bones.push_back(new Mob("images/bone.png", 0.99, 0, 0.2, 0.2, speed));
+    bones.push_back(new Mob("images/moanBone.png", 0.99, 0, 0.3, 0.3, speed));
     if (speed < maxSpeed)
         speed += .001;
 }
 
-void Enemies::addSmallBone(){
-    bones.push_back(new Mob("images/bone.png", 0.99, 0, 0.2, 0.2, speed));
+void Enemies::addLongBone(){
+    bones.push_back(new Mob("images/longBone.png", 0.99, 0, 0.3, 0.3, speed));
     if (speed < maxSpeed)
         speed += .001;
 }
 
 void Enemies::addThiccBone(){
-    bones.push_back(new Mob("images/bone.png", 0.99, 0, 0.2, 0.2, speed));
+    bones.push_back(new Mob("images/thiccBone.png", 0.99, 0, 0.3, 0.3, speed));
     if (speed < maxSpeed)
         speed += .001;
 }

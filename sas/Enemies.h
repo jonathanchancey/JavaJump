@@ -21,7 +21,7 @@ public:
     int rTime;
     void reset();
     
-    void addSmallBone();
+    void addLongBone();
     void addThiccBone();
     
     std::vector<Mob*> bones;
