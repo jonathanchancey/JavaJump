@@ -184,10 +184,10 @@ void App::keyPress(unsigned char key) {
     
     if (key == ' '){
 //        secondton->addBone();
-        if (platform->jumps > 0){
-            platform->jumps -= 1;
-            platform->velY = .06;
-        }
+//        if (platform->jumps > 0){
+//            platform->jumps -= 1;
+//            platform->velY = .06;
+//        }
 //        ball->x = 0;
 //        ball->y = 0.67;
 //        ball->yinc = 0.01;
