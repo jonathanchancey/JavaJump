@@ -8,10 +8,10 @@ void app_timer(int value){
         singleton->gameOver->advance();
     }
     
-    if (singleton->moving){
+    if (singleton->moving){ // if gave is still going
         singleton->platform->java();
-        secondton->Adv();
-        if (secondton->ultraContainment(singleton->platform->x+singleton->platform->w/2, singleton->platform->y-singleton->platform->h/2)){
+        secondton->Adv(); // allows java to move, this is her tick loop thing
+        if (secondton->ultraContainment(singleton->platform->x+singleton->platform->w/2, singleton->platform->y-singleton->platform->h/2)){ // checks if java is touching enemies
             singleton->moving = false;
             singleton->game_over = true;
             singleton->gameOver->animate();
@@ -35,6 +35,7 @@ void app_timer(int value){
         glutTimerFunc(100, app_timer, value);
     }
     else{
+        // everything below here allows the game to progress, in terms of drawing itself and calling the next tick
         if (singleton->up || singleton->down || singleton->left || singleton->right || singleton->moving && !singleton->game_over){
             singleton->redraw();
             glutTimerFunc(16, app_timer, value);
@@ -75,12 +76,12 @@ void App::specialKeyPress(int key){
             //left = true;
         }
         if (key == 101){
-            if (platform->jumps > 0){
+            if (platform->jumps > 0 && !platform->isJumpDisabled){
                 platform->gravity = .003;
                 platform->jumps -= 1;
                 platform->velY = .06;
             }
-//            up = true;
+            //up = true;
         }
         if (key == 102){
             //right = true;
@@ -101,6 +102,9 @@ void App::specialKeyUp(int key){
     }
     if (key == 101) {
         platform->gravity = .006;
+        if (platform->jumps == 0){
+            platform->isJumpDisabled = 1;
+        }
         up = false;
     }
     if (key == 102) {
@@ -184,10 +188,10 @@ void App::keyPress(unsigned char key) {
     
     if (key == ' '){
 //        secondton->addBone();
-        if (platform->jumps > 0){
-            platform->jumps -= 1;
-            platform->velY = .06;
-        }
+//        if (platform->jumps > 0){
+//            platform->jumps -= 1;
+//            platform->velY = .06;
+//        }
 //        ball->x = 0;
 //        ball->y = 0.67;
 //        ball->yinc = 0.01;

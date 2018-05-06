@@ -73,6 +73,7 @@ void TexRect::java(){
     } else {
         velY = 0;
         y = 0;
+        isJumpDisabled = false;
         jumps = jumpAmount; // this is for future implementations of powerups.
     }
 }

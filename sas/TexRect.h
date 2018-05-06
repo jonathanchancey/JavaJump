@@ -42,6 +42,7 @@ public:
     int jumps;
     
     bool duck;
+    bool isJumpDisabled;
 };
 
 #endif
