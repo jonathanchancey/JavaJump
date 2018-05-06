@@ -4,7 +4,7 @@
 
 Enemies::Enemies(){
     //printf("creating Enemies class");
-    speed = .02; // default speed
+    speed = .02; // default speed // global speed
     maxSpeed = .15; // how fast these bones can go
     mobTimer = 0;
     minTimeBetwnMob = 42;
@@ -42,8 +42,9 @@ void Enemies::Adv(){
         mobTimer = 0;
     }
     for(int i = 0; i < bones.size(); i++){
+        bones[i]->setSpeed(speed);
         //deletes offscreen bones
-        if (bones[i]->x < -1.1){
+        if (bones[i]->x < -1.5){
             bones.erase(bones.begin() + i-1);
         }
         //make bones move left and be dangerous

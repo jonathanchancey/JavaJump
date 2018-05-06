@@ -16,6 +16,7 @@
 		1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E31E5E3A83006D7CBD /* GlutApp.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E61E5ECD67006D7CBD /* App.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		17FD33DD208FF94C00C7FC56 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD33D9208FF4A300C7FC56 /* CoreFoundation.framework */; };
+		20015F85209ECD6F007FDD27 /* rand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20015F84209ECD6F007FDD27 /* rand.cpp */; };
 		20A0A8F5209A5AE7007C0EAD /* Line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A0A8F3209A5AE7007C0EAD /* Line.cpp */; };
 		20A0A8F9209A6C5B007C0EAD /* Mob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A0A8F7209A6C5B007C0EAD /* Mob.cpp */; };
 		20A0A8FC209A73A0007C0EAD /* Enemies.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20A0A8FB209A73A0007C0EAD /* Enemies.cpp */; };
@@ -49,6 +50,8 @@
 		1799B7E71E5ECD67006D7CBD /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
 		17FD33D9208FF4A300C7FC56 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		17FD33DB208FF55B00C7FC56 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSOIL.a; sourceTree = "<group>"; };
+		20015F83209ECD6F007FDD27 /* rand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rand.h; sourceTree = "<group>"; };
+		20015F84209ECD6F007FDD27 /* rand.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rand.cpp; sourceTree = "<group>"; };
 		20A0A8F3209A5AE7007C0EAD /* Line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Line.cpp; sourceTree = "<group>"; };
 		20A0A8F4209A5AE7007C0EAD /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		20A0A8F6209A5B33007C0EAD /* libs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libs.h; sourceTree = "<group>"; };
@@ -76,6 +79,8 @@
 		173FEEF81AA63A07006CCB85 = {
 			isa = PBXGroup;
 			children = (
+				20015F83209ECD6F007FDD27 /* rand.h */,
+				20015F84209ECD6F007FDD27 /* rand.cpp */,
 				173FEF171AA63B22006CCB85 /* GLUT.framework */,
 				173FEF151AA63B1B006CCB85 /* OpenGL.framework */,
 				1749D6461E9D3D5C0038BC46 /* TexRect.cpp */,
@@ -175,6 +180,7 @@
 			files = (
 				1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */,
 				1708B5422091F634007BA7C1 /* AnimatedRect.cpp in Sources */,
+				20015F85209ECD6F007FDD27 /* rand.cpp in Sources */,
 				20A0A8FC209A73A0007C0EAD /* Enemies.cpp in Sources */,
 				20A0A8F9209A6C5B007C0EAD /* Mob.cpp in Sources */,
 				173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */,

@@ -16,6 +16,7 @@ GlutApp::GlutApp(const char* label, int x, int y, int w, int h) {
     glutCreateWindow(label);
     
     // Setup some OpenGL options
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);	
     glEnable (GL_DEPTH_TEST);
     glEnable (GL_POINT_SMOOTH);
     glEnable (GL_LINE_SMOOTH);

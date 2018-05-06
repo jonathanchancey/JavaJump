@@ -37,6 +37,10 @@ Mob::Mob (const char* filename, float x=0, float y=0, float w=0.5, float h=0.5,f
     gravity = .01; // more descriptive than yinc, but basically yinc
 }
 
+void Mob::setSpeed(float speed){
+    xinc = speed;
+}
+
 void Mob::moveUp(float rate){
     y += rate;
     if (y > 0.99){

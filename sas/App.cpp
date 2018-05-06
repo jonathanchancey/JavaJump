@@ -57,7 +57,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     
     ball = new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2);
 
-    platform = new TexRect("images/java.png", -.75, 0, 0.4, 0.3);
+    platform = new TexRect("images/javav2.png", -.75, 0, 0.4, 0.3);
     
     gameOver = new AnimatedRect("images/game_over.png", 7, 1, -1.0, 0.8, 2, 1.2);
     
