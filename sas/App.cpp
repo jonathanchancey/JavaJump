@@ -75,12 +75,12 @@ void App::specialKeyPress(int key){
             //left = true;
         }
         if (key == 101){
-            if (platform->jumps > 0){
+            if (platform->jumps > 0 && !platform->isJumpDisabled){
                 platform->gravity = .003;
                 platform->jumps -= 1;
                 platform->velY = .06;
             }
-//            up = true;
+            //up = true;
         }
         if (key == 102){
             //right = true;
@@ -101,6 +101,9 @@ void App::specialKeyUp(int key){
     }
     if (key == 101) {
         platform->gravity = .006;
+        if (platform->jumps == 0){
+            platform->isJumpDisabled = 1;
+        }
         up = false;
     }
     if (key == 102) {
