@@ -1,14 +1,22 @@
-//
-//  mMenu.h
-//  glutapp
-//
-//  Created by coruscar on 5/6/18.
-//  Copyright © 2018 Angelo Kyrilov. All rights reserved.
-//
 
-#ifndef mMenu_hpp
-#define mMenu_hpp
 
-#include <stdio.h>
+// #ifndef mMenu_hpp
+// #define mMenu_hpp
 
-#endif /* mMenu_hpp */
+// #include <stdio.h>
+// #include "TexRect.h"
+// #include <iostream>
+// #include "GlutApp.h"
+
+// class mMenu: public GlutApp {
+//     public:
+    
+//         mMenu();
+//         TexRect* main_menu;
+
+// };
+
+
+
+
+// #endif /* mMenu_hpp */

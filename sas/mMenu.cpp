@@ -1,9 +1,7 @@
-//
-//  mMenu.cpp
-//  glutapp
-//
-//  Created by coruscar on 5/6/18.
-//  Copyright © 2018 Angelo Kyrilov. All rights reserved.
-//
 
-#include "mMenu.h"
+// #include "mMenu.h"
+
+// mMenu::mMenu()
+// {
+//     main_menu = new TexRect("images/main_menu.png", -1, 1, 2, 2);
+// }

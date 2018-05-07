@@ -5,6 +5,8 @@
 #include "mMenu.h"
 #include "libs.h"
 
+//bool showMenu = 1;
+
 class GlutApp {
 private:
     // GLUT callbacks
