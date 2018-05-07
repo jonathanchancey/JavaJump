@@ -12,7 +12,7 @@ GLuint playerController::texId(const char* filename){
 }
 
 playerController::playerController (int row, int col, float x=0, float y=0, float w=0.5, float h=0.5){
-    const char* filename[2] = {"images/javaRunningBig.png","images/javaJumpingBig.png"};
+    const char* filename[5] = {"images/javaRunningBig.png","images/javaJumpingBig.png","images/javaDuckingBig.png","images/javaDeathBig.png"};
     
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_FLAT);
@@ -151,13 +151,14 @@ void playerController::draw(){
         if (jumps<jumpAmount){
             glBindTexture( GL_TEXTURE_2D, texture_id[1] );
             curr_row = 1; curr_col = 2;
-//            rows = 1;
-//            cols = 2;
         }
+//        else if (jumps<jumpAmount){
+//            glBindTexture( GL_TEXTURE_2D, texture_id[1] );
+//            curr_row = 1; curr_col = 2;
+//
+//        }
         else{
             glBindTexture( GL_TEXTURE_2D, texture_id[0] );
-//            rows = 1;
-//            cols = 2;
         }
         glEnable(GL_TEXTURE_2D);
         glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
