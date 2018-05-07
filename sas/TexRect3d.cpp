@@ -1,7 +1,7 @@
-#include "TexRect.h"
+#include "TexRect3d.h"
 
 
-TexRect::TexRect (const char* filename, float x=0, float y=0, float w=0.5, float h=0.5){
+TexRect3d::TexRect3d (const char* filename, float x=0, float y=0, float w=0.5, float h=0.5){
     
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_FLAT);
@@ -37,34 +37,34 @@ TexRect::TexRect (const char* filename, float x=0, float y=0, float w=0.5, float
     gravity = .003; // more descriptive than yinc, but basically yinc
 }
 
-void TexRect::moveUp(float rate){
+void TexRect3d::moveUp(float rate){
     y += rate;
     if (y > 0.99){
         y = 0.99;
     }
 }
-void TexRect::moveDown(float rate){
+void TexRect3d::moveDown(float rate){
     y -= rate;
     if (y - h < -0.99){
         y = -0.99 + h;
     }
 }
-void TexRect::moveLeft(float rate){
+void TexRect3d::moveLeft(float rate){
     x -= rate;
 
 }
-void TexRect::moveRight(float rate){
+void TexRect3d::moveRight(float rate){
     x += rate;
     if (x + w > 0.99){
         x = 0.99 - w;
     }
 }
 
-void TexRect::jump(){
+void TexRect3d::jump(){
     // we don't need this anymore thanks to the power of velocity oriented programming.
 }
 //loop of action
-void TexRect::Adv(){
+void TexRect3d::Adv(){
     y += velY;
     if (y>0){
         velY -= gravity;
@@ -76,7 +76,7 @@ void TexRect::Adv(){
     }
 }
 
-void TexRect::activate(){
+void TexRect3d::activate(){
 //        y+=yinc;
     if (movingLeft){
         x -=xinc;
@@ -103,36 +103,59 @@ void TexRect::activate(){
 
 
 
-void TexRect::draw(){
+
+void TexRect3d::draw(float z){
     glBindTexture( GL_TEXTURE_2D, texture_id );
     glEnable(GL_TEXTURE_2D);
     
     glBegin(GL_QUADS);
     glColor4f(1, 1, 1, 1);
     glTexCoord2f(0, 0);
-    glVertex2f(x, y - h);
+    glVertex3f(x, y - h, z);
     
     glTexCoord2f(0, 1);
-    glVertex2f(x, y);
+    glVertex3f(x, y, z);
     
     glTexCoord2f(1, 1);
-    glVertex2f(x+w, y);
+    glVertex3f(x+w, y, z);
     
     glTexCoord2f(1, 0);
-    glVertex2f(x+w, y - h);
+    glVertex3f(x+w, y - h, z);
     
     glEnd();
     
     glDisable(GL_TEXTURE_2D);
 }
+//void TexRect3d::draw(){
+//    glBindTexture( GL_TEXTURE_2D, texture_id );
+//    glEnable(GL_TEXTURE_2D);
+//
+//    glBegin(GL_QUADS);
+//    glColor4f(1, 1, 1, 1);
+//    glTexCoord2f(0, 0);
+//    glVertex2f(x, y - h);
+//
+//    glTexCoord2f(0, 1);
+//    glVertex2f(x, y);
+//
+//    glTexCoord2f(1, 1);
+//    glVertex2f(x+w, y);
+//
+//    glTexCoord2f(1, 0);
+//    glVertex2f(x+w, y - h);
+//
+//    glEnd();
+//
+//    glDisable(GL_TEXTURE_2D);
+//}
 
-TexRect::~TexRect(){
+TexRect3d::~TexRect3d(){
 //    SOIL_free_image_data(filename); not sure which to free
     
 }
 
 
-bool TexRect::contains(float mx, float my){
+bool TexRect3d::contains(float mx, float my){
     return mx >= x && mx <= x+w && my <= y && my >= y - h;
 }
 

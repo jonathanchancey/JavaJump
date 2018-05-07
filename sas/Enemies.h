@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "libs.h"
 #include "Mob.h"
+#include "TexRect3d.h"
 #include <vector>
 //#include <cstdlib>
 #include <random>
@@ -23,6 +24,7 @@ public:
     
     void addLongBone();
     void addThiccBone();
+    TexRect3d* bg;
     
     std::vector<Mob*> bones;
     void Adv();

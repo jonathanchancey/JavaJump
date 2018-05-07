@@ -63,7 +63,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
 
     mainMenu = new TexRect("images/main_menu.png", -1, 1, 2, 2);
     
-    background = new TexRect("images/sky.png", -1, 1, 2, 2);
+//    background = new TexRect("images/sky.png", -1, 1, 2, 2);
 //    secondton->addBone();
     
     ball = new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2);
@@ -143,7 +143,8 @@ void App::draw() {
     
     if(!main_menu)
     {
-        background->draw();
+//        secondton
+//        background->draw();
         secondton->draw();
         java->draw();
         ball->draw();
@@ -185,7 +186,7 @@ void App::keyPress(unsigned char key) {
         delete ball;
         delete java;
         delete gameOver;
-        delete background;
+//        delete background;
         delete this;
         
         delete secondton;
