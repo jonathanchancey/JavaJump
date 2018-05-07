@@ -2,10 +2,12 @@
 
 // Make this static so that it will not be accessible in other source files
 static GlutApp* app;
+static GlutApp* mainMenu;
 
 GlutApp::GlutApp(const char* label, int x, int y, int w, int h) {
     // Set app pointer to be the current object
     app = this;
+//    mainMenu = new mMenu();
     
     // Setup window position, size, and title
     width = w;
@@ -98,7 +100,13 @@ void GlutApp::redraw() {
 
 void GlutApp::displayCB(){
     // When GLUT needs to redraw itself, call our draw method
+//    if (showMenu){
+//        mainMenu-draw();
+//    } else {
+//        app->draw();
+//    }
     app->draw();
+
 }
 
 void GlutApp::reshapeCB(int w, int h){

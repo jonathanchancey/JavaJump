@@ -9,10 +9,7 @@ void app_timer(int value){
     if (singleton->game_over){
         singleton->gameOver->advance();
     }
-    if (singleton->java->jumps < singleton->java->jumpAmount){
-        
-        singleton->java->advanceFrame();
-    }
+
     if (singleton->java->animating && (gameTick % 8 == 1)){
 //        printf("value = \n",gameTick);
         singleton->java->advanceFrame();

@@ -140,9 +140,10 @@ bool playerController::done() {
 void playerController::draw(){
     if (animating){
         
-        
-        if (jumps<jumpAmount)
+        //if java's jumps are less than the amount of jumps she should have, then she's in the air and should use her jumping animation
+        if (jumps<jumpAmount){
             glBindTexture( GL_TEXTURE_2D, texture_id[1] );
+        }
         else
             glBindTexture( GL_TEXTURE_2D, texture_id[0] );
 

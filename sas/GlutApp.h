@@ -2,7 +2,7 @@
 #define GlutApp_hpp
 
 #include <iostream>
-
+#include "mMenu.h"
 #include "libs.h"
 
 class GlutApp {
