@@ -37,6 +37,8 @@ public:
     playerController* java;
     
     TexRect* background;
+
+    TexRect* mainMenu;
     
     AnimatedRect* gameOver;
     
@@ -49,6 +51,7 @@ public:
     
     bool moving;
     bool game_over;
+    bool main_menu = true;
     
 };
 

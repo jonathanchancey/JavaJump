@@ -60,6 +60,8 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     mx = 0.0;
     my = 0.0;
 //    gameTick = 0;
+
+    mainMenu = new TexRect("images/main_menu.png", -1, 1, 2, 2);
     
     background = new TexRect("images/sky.png", -1, 1, 2, 2);
 //    secondton->addBone();
@@ -72,7 +74,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     
     up = down = left = right = false;
     
-    moving = true;
+    moving = false;
     game_over = false;
     
     app_timer(1);
@@ -139,11 +141,18 @@ void App::draw() {
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     
-    background->draw();
-    secondton->draw();
-    java->draw();
-    ball->draw();
-    gameOver->draw();
+    if(!main_menu)
+    {
+        background->draw();
+        secondton->draw();
+        java->draw();
+        ball->draw();
+        gameOver->draw();
+    }
+    else
+    {
+        mainMenu->draw();
+    }
     
     // We have been drawing everything to the back buffer
     // Swap the buffers to see the result of what we drew
@@ -193,6 +202,15 @@ void App::keyPress(unsigned char key) {
     }
     if (key == 'a'){
         secondton->addBone();
+    }
+
+    if(key == 13)
+    {
+        main_menu = false;
+        moving = true;
+        draw();
+        app_timer(1);
+
     }
     
     if (key == ' '){
