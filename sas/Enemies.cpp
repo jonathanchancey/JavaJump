@@ -9,8 +9,8 @@ Enemies::Enemies(){
     mobTimer = 0;
     minTimeBetwnMob = 42;
     addBone();
-    bg = new TexRect3d("images/ground.png", 4.0, 0.0, 8, 1);
-
+    bgCounter = 0;
+    bg = new TexRect3d("images/groundThinHalfBig.png", -1.0, -.090, 10, .3);
 }
 void Enemies::reset(){
     speed = .02;
@@ -21,9 +21,17 @@ void Enemies::reset(){
 
 void Enemies::Adv(){
     mobTimer += 1;
+    bgCounter += speed;
+    
+    if (bgCounter > 10){
+        bgCounter = 0;
+        bgs.push_back(new TexRect3d("images/groundThinHalfBig.png", -1.0, -.090, 10, .3));
+    }
     
     bg->moveLeft(speed);
     bg->draw(1);
+    
+    
     std::random_device rd; // obtain a random number from hardware
     std::mt19937 eng(rd()); // seed the generator
 //    std::uniform_int_distribution<> distr(0, 40); // define the range
@@ -45,6 +53,13 @@ void Enemies::Adv(){
             addThiccBone();
         }
         mobTimer = 0;
+    }
+    for(int i = 0; i < bgs.size();i++){
+//        if(bgs[i]->x < 10){
+//            bgs.erase(bgs.begin()+i-1);
+//        }
+        bgs[i]->moveLeft(speed);
+        bgs[i]->draw(1);
     }
     for(int i = 0; i < bones.size(); i++){
         bones[i]->setSpeed(speed);
@@ -91,6 +106,9 @@ bool Enemies::ultraContainment(float x, float y){
 void Enemies::draw(){
     bg->draw(1);
 
+    for (int i = 0; i < bgs.size(); i++){
+        bgs[i]->draw(1);
+    }
     for (int i = 0; i < bones.size(); i++){
         bones[i]->draw();
     }

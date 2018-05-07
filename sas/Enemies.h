@@ -21,12 +21,14 @@ public:
     int minTimeBetwnMob;
     int rTime;
     void reset();
+    float bgCounter;
     
     void addLongBone();
     void addThiccBone();
     TexRect3d* bg;
     
     std::vector<Mob*> bones;
+    std::vector<TexRect3d*> bgs;
     void Adv();
     void addBone();
     bool ultraContainment(float, float);
