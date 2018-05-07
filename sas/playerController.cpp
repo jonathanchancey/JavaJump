@@ -1,18 +1,33 @@
 #include "playerController.h"
 
 
-playerController::playerController (const char* filename, int r, int c, float x=0, float y=0, float w=0.5, float h=0.5){
+GLuint playerController::texId(const char* filename){
+    GLuint texture_id = SOIL_load_OGL_texture (
+                                        filename,
+                                        SOIL_LOAD_AUTO,
+                                        SOIL_CREATE_NEW_ID,
+                                        SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
+                                        );
+    return texture_id;
+}
+
+playerController::playerController (int row, int col, float x=0, float y=0, float w=0.5, float h=0.5){
+    const char* filename[2] = {"images/javaRunningBig.png","images/javaJumpingBig.png"};
     
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_FLAT);
     glEnable(GL_DEPTH_TEST);
     
-    texture_id = SOIL_load_OGL_texture (
-     filename,
-     SOIL_LOAD_AUTO,
-     SOIL_CREATE_NEW_ID,
-     SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
-     );
+//    texture_id = SOIL_load_OGL_texture (
+//     filename,
+//     SOIL_LOAD_AUTO,
+//     SOIL_CREATE_NEW_ID,
+//     SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
+//     );
+    
+    for (int i = 0; i < 4; i++){
+        texture_id[i] = texId(filename[i]);
+    }
     
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -21,8 +36,8 @@ playerController::playerController (const char* filename, int r, int c, float x=
     
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
     
-    this->rows = r;
-    this->cols = c;
+    this->rows = row;
+    this->cols = col;
     curr_row = 1;
     curr_col = 1;
     complete = false;
@@ -124,7 +139,14 @@ bool playerController::done() {
 
 void playerController::draw(){
     if (animating){
-        glBindTexture( GL_TEXTURE_2D, texture_id );
+        
+        
+        if (jumps<jumpAmount)
+            glBindTexture( GL_TEXTURE_2D, texture_id[1] );
+        else
+            glBindTexture( GL_TEXTURE_2D, texture_id[0] );
+
+
         glEnable(GL_TEXTURE_2D);
         glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
         

@@ -9,10 +9,10 @@ public:
     float y;
     float w;
     float h;
-    GLuint texture_id;
+    GLuint texture_id[5];
 
 
-    playerController (const char*, int, int, float, float, float, float);
+    playerController (int, int, float, float, float, float);
     ~playerController();
     
     void draw();
@@ -23,6 +23,7 @@ public:
     void moveDown(float rate=0.01);
     void moveLeft(float rate=0.01);
     void moveRight(float rate=0.01);
+    GLuint texId(const char*);
     
     void jump();
     void Adv();

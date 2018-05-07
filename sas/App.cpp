@@ -9,6 +9,10 @@ void app_timer(int value){
     if (singleton->game_over){
         singleton->gameOver->advance();
     }
+    if (singleton->java->jumps < singleton->java->jumpAmount){
+        
+        singleton->java->advanceFrame();
+    }
     if (singleton->java->animating && (gameTick % 8 == 1)){
 //        printf("value = \n",gameTick);
         singleton->java->advanceFrame();
@@ -65,7 +69,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     
     ball = new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2);
 
-    java = new playerController("images/javaRunningBig.png", 1, 2, -.75, 0, 0.4, 0.3);
+    java = new playerController(1, 2, -.75, 0, 0.4, 0.3);
     
     gameOver = new AnimatedRect("images/gameOverJavaWobble.png", 8, 1, -1.0, 0.8, 2, 1.2);
     
