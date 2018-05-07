@@ -33,7 +33,7 @@ public:
     
     TexRect* ball;
     
-    TexRect* platform;
+    TexRect* java;
     
     TexRect* background;
     

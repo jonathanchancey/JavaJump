@@ -66,7 +66,7 @@ void TexRect::jump(){
     // we don't need this anymore thanks to the power of velocity oriented programming.
 }
 //loop of action
-void TexRect::java(){
+void TexRect::Adv(){
     y += velY;
     if (y>0){
         velY -= gravity;

@@ -9,25 +9,25 @@ void app_timer(int value){
     }
     
     if (singleton->moving){ // if gave is still going
-        singleton->platform->java();
+        singleton->java->Adv();
         secondton->Adv(); // allows java to move, this is her tick loop thing
-        if (secondton->ultraContainment(singleton->platform->x+singleton->platform->w/2, singleton->platform->y-singleton->platform->h/2)){ // checks if java is touching enemies
+        if (secondton->ultraContainment(singleton->java->x+singleton->java->w/2, singleton->java->y-singleton->java->h/2)){ // checks if java is touching enemies
             singleton->moving = false;
             singleton->game_over = true;
             singleton->gameOver->animate();
         }
     }
     if (singleton->up){
-        singleton->platform->moveUp(0.05);
+        singleton->java->moveUp(0.05);
     }
     if (singleton->down){
-        singleton->platform->moveDown(0.05);
+        singleton->java->moveDown(0.05);
     }
     if (singleton->left){
-        singleton->platform->moveLeft(0.05);
+        singleton->java->moveLeft(0.05);
     }
     if (singleton->right){
-        singleton->platform->moveRight(0.05);
+        singleton->java->moveRight(0.05);
     }
     
     if (singleton->game_over){
@@ -57,9 +57,9 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     
     ball = new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2);
 
-    platform = new TexRect("images/javav2.png", -.75, 0, 0.4, 0.3);
+    java = new TexRect("images/javav2.png", -.75, 0, 0.4, 0.3);
     
-    gameOver = new AnimatedRect("images/game_over.png", 7, 1, -1.0, 0.8, 2, 1.2);
+    gameOver = new AnimatedRect("images/gameOverJavaWobble.png", 8, 1, -1.0, 0.8, 2, 1.2);
     
     up = down = left = right = false;
     
@@ -76,10 +76,10 @@ void App::specialKeyPress(int key){
             //left = true;
         }
         if (key == 101){
-            if (platform->jumps > 0 && !platform->isJumpDisabled){
-                platform->gravity = .003;
-                platform->jumps -= 1;
-                platform->velY = .06;
+            if (java->jumps > 0 && !java->isJumpDisabled){
+                java->gravity = .003;
+                java->jumps -= 1;
+                java->velY = .06;
             }
             //up = true;
         }
@@ -87,9 +87,9 @@ void App::specialKeyPress(int key){
             //right = true;
         }
         if (key == 103){
-            platform->velY -= .015;
-            if (platform->y <= 0){
-                platform->duck = true;
+            java->velY -= .015;
+            if (java->y <= 0){
+                java->duck = true;
             }
             //down = true;
         }
@@ -101,9 +101,9 @@ void App::specialKeyUp(int key){
         left = false;
     }
     if (key == 101) {
-        platform->gravity = .006;
-        if (platform->jumps == 0){
-            platform->isJumpDisabled = 1;
+        java->gravity = .006;
+        if (java->jumps == 0){
+            java->isJumpDisabled = 1;
         }
         up = false;
     }
@@ -112,8 +112,8 @@ void App::specialKeyUp(int key){
     }
     if (key == 103) {
         down = false;
-        if (platform->y <= 0){
-            platform->duck = false;
+        if (java->y <= 0){
+            java->duck = false;
         }
     }
 }
@@ -132,7 +132,7 @@ void App::draw() {
     
     background->draw();
     secondton->draw();
-    platform->draw();
+    java->draw();
     ball->draw();
     gameOver->draw();
     
@@ -165,7 +165,7 @@ void App::keyPress(unsigned char key) {
         // Exit the app when Esc key is pressed
         
         delete ball;
-        delete platform;
+        delete java;
         delete gameOver;
         delete background;
         delete this;
@@ -188,9 +188,9 @@ void App::keyPress(unsigned char key) {
     
     if (key == ' '){
 //        secondton->addBone();
-//        if (platform->jumps > 0){
-//            platform->jumps -= 1;
-//            platform->velY = .06;
+//        if (java->jumps > 0){
+//            java->jumps -= 1;
+//            java->velY = .06;
 //        }
 //        ball->x = 0;
 //        ball->y = 0.67;
@@ -204,6 +204,6 @@ void App::keyPress(unsigned char key) {
 }
 void App::keyUp(unsigned char key) {
 //    if (key == ' '){
-//        platform->gravity = .006;
+//        java->gravity = .006;
 //    }
 }

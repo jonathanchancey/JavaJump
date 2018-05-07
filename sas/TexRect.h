@@ -25,7 +25,7 @@ public:
     void moveRight(float rate=0.01);
     
     void jump();
-    void java();
+    void Adv();
     void activate();
     
     bool rising;
