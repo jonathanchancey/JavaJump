@@ -103,23 +103,30 @@ void playerController::Adv(){
 
 
 void playerController::advanceFrame(){
-    if (curr_col < cols){
-        curr_col++;
-    }
-    else {
-        if (curr_row < rows){
-            curr_row++;
-            curr_col = 1;
+    if (!(jumps<jumpAmount)){
+        if (curr_col < cols){
+            curr_col++;
         }
-        else{
-            curr_row = 1;
-            curr_col = 1;
+        else {
+            if (curr_row < rows){
+                curr_row++;
+                curr_col = 1;
+            }
+            else{
+                curr_row = 1;
+                curr_col = 1;
+            }
         }
+        
+        if (curr_row == rows && curr_col == cols){
+            complete = true;
+        }
+    } else {
+        curr_col = 2;
+        curr_row = 1;
     }
     
-    if (curr_row == rows && curr_col == cols){
-        complete = true;
-    }
+
 }
 void playerController::reset(){
     complete = false;
@@ -143,11 +150,15 @@ void playerController::draw(){
         //if java's jumps are less than the amount of jumps she should have, then she's in the air and should use her jumping animation
         if (jumps<jumpAmount){
             glBindTexture( GL_TEXTURE_2D, texture_id[1] );
+            curr_row = 1; curr_col = 2;
+//            rows = 1;
+//            cols = 2;
         }
-        else
+        else{
             glBindTexture( GL_TEXTURE_2D, texture_id[0] );
-
-
+//            rows = 1;
+//            cols = 2;
+        }
         glEnable(GL_TEXTURE_2D);
         glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
         
