@@ -23,9 +23,9 @@ void Enemies::Adv(){
     mobTimer += 1;
     bgCounter += speed;
     
-    if (bgCounter > 10){
-        bgCounter = 0;
-        bgs.push_back(new TexRect3d("images/groundThinHalfBig.png", -1.0, -.090, 10, .3));
+    if (bgCounter > 8){
+        bgCounter = -2;
+        bgs.push_back(new TexRect3d("images/groundThinHalfBig.png", 1.0, -.090, 10, .3));
     }
     
     bg->moveLeft(speed);
