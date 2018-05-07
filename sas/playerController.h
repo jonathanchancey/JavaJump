@@ -26,7 +26,6 @@ public:
     
     void jump();
     void Adv();
-    void activate();
     
     bool rising;
     bool movingLeft;
@@ -51,6 +50,7 @@ public:
     void reset();
     void animate();
     void stop();
+    bool done();
 };
 
 #endif

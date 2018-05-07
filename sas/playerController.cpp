@@ -1,7 +1,7 @@
 #include "playerController.h"
 
 
-playerController::playerController (const char* filename, int rows, int cols, float x=0, float y=0, float w=0.5, float h=0.5){
+playerController::playerController (const char* filename, int r, int c, float x=0, float y=0, float w=0.5, float h=0.5){
     
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_FLAT);
@@ -21,12 +21,12 @@ playerController::playerController (const char* filename, int rows, int cols, fl
     
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
     
-    this->rows = rows;
-    this->cols = cols;
+    this->rows = r;
+    this->cols = c;
     curr_row = 1;
     curr_col = 1;
     complete = false;
-    animating = false;
+    animating = true;
     
     
     this->x = x;
@@ -86,19 +86,6 @@ void playerController::Adv(){
     }
 }
 
-void playerController::activate(){
-//        y+=yinc;
-    if (movingLeft){
-        x -=xinc;
-    }
-    else {
-        x +=xinc;
-    }
-    if (x+w > 0.99) {
-        movingLeft = true;
-        
-    }
-}
 
 void playerController::advanceFrame(){
     if (curr_col < cols){
@@ -131,28 +118,66 @@ void playerController::stop(){
     animating = false;
 }
 
+bool playerController::done() {
+    return complete;
+}
 
 void playerController::draw(){
-    glBindTexture( GL_TEXTURE_2D, texture_id );
-    glEnable(GL_TEXTURE_2D);
-    
-    glBegin(GL_QUADS);
-    glColor4f(1, 1, 1, 1);
-    glTexCoord2f(0, 0);
-    glVertex2f(x, y - h);
-    
-    glTexCoord2f(0, 1);
-    glVertex2f(x, y);
-    
-    glTexCoord2f(1, 1);
-    glVertex2f(x+w, y);
-    
-    glTexCoord2f(1, 0);
-    glVertex2f(x+w, y - h);
-    
-    glEnd();
-    
-    glDisable(GL_TEXTURE_2D);
+    if (animating){
+        glBindTexture( GL_TEXTURE_2D, texture_id );
+        glEnable(GL_TEXTURE_2D);
+        glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+        
+        
+        float xinc = 1.0/cols;
+        float yinc = 1.0/rows;
+        
+        
+        float top = 1 - yinc * (curr_row - 1);
+        float bottom = 1 - yinc * curr_row;
+        
+        float left = xinc * (curr_col - 1);
+        float right = xinc * curr_col;
+        
+        
+        glBegin(GL_QUADS);
+        
+        glTexCoord2f(left, bottom);
+        glVertex2f(x, y - h);
+        
+        glTexCoord2f(left, top);
+        glVertex2f(x, y);
+        
+        glTexCoord2f(right, top);
+        glVertex2f(x+w, y);
+        
+        glTexCoord2f(right, bottom);
+        glVertex2f(x+w, y - h);
+        
+        glEnd();
+        
+        glDisable(GL_TEXTURE_2D);
+    }
+//    glBindTexture( GL_TEXTURE_2D, texture_id );
+//    glEnable(GL_TEXTURE_2D);
+//
+//    glBegin(GL_QUADS);
+//    glColor4f(1, 1, 1, 1);
+//    glTexCoord2f(0, 0);
+//    glVertex2f(x, y - h);
+//
+//    glTexCoord2f(0, 1);
+//    glVertex2f(x, y);
+//
+//    glTexCoord2f(1, 1);
+//    glVertex2f(x+w, y);
+//
+//    glTexCoord2f(1, 0);
+//    glVertex2f(x+w, y - h);
+//
+//    glEnd();
+//
+//    glDisable(GL_TEXTURE_2D);
 }
 
 playerController::~playerController(){

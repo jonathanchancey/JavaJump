@@ -3,13 +3,20 @@
 static App* singleton;
 static Enemies* secondton;
 
+int gameTick = 0;
 void app_timer(int value){
+    gameTick++;
     if (singleton->game_over){
         singleton->gameOver->advance();
+    }
+    if (singleton->java->animating && (gameTick % 8 == 1)){
+//        printf("value = \n",gameTick);
+        singleton->java->advanceFrame();
     }
     
     if (singleton->moving){ // if gave is still going
         singleton->java->Adv();
+//        singleton->java->animate();
         secondton->Adv(); // allows java to move, this is her tick loop thing
         if (secondton->ultraContainment(singleton->java->x+singleton->java->w/2, singleton->java->y-singleton->java->h/2)){ // checks if java is touching enemies
             singleton->moving = false;
@@ -51,13 +58,14 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     singleton = this;
     mx = 0.0;
     my = 0.0;
+//    gameTick = 0;
     
     background = new TexRect("images/sky.png", -1, 1, 2, 2);
 //    secondton->addBone();
     
     ball = new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2);
 
-    java = new TexRect("images/javav2.png", -.75, 0, 0.4, 0.3);
+    java = new playerController("images/javaRunningBig.png", 1, 2, -.75, 0, 0.4, 0.3);
     
     gameOver = new AnimatedRect("images/gameOverJavaWobble.png", 8, 1, -1.0, 0.8, 2, 1.2);
     

@@ -5,6 +5,7 @@
 #include "TexRect.h"
 #include "AnimatedRect.h"
 #include "Enemies.h"
+#include "playerController.h"
 #include <vector>
 #include <cstdlib>
 
@@ -33,11 +34,13 @@ public:
     
     TexRect* ball;
     
-    TexRect* java;
+    playerController* java;
     
     TexRect* background;
     
     AnimatedRect* gameOver;
+    
+//    int gameTick;
     
     bool up;
     bool down;
