@@ -152,9 +152,8 @@ void App::draw() {
         background->draw();
         secondton->draw();
         java->draw();
-        if (moving){
-        printtext->display(gameTick, hiScore->getScore());
-          }
+        if (moving)
+            printtext->display(gameTick, hiScore->getScore());
         ball->draw();
         gameOver->draw();
         hiScore->checkScore(endScore);

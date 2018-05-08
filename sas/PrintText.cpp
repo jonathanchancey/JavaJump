@@ -10,9 +10,6 @@
 #include "libs.h"
 #include <string>     // std::string, std::to_string
 
-int WindowWidth = 600;
-int WindowHeight = 600;
-
 PrintText::PrintText(int x, int y, std::string String){
     //(x,y) is from the bottom left of the window
     glMatrixMode(GL_PROJECTION);

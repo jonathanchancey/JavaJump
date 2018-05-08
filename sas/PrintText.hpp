@@ -18,8 +18,8 @@ class PrintText {
 public:
     float x;
     float y;
-    int WindowHeight;
-    int WindowWidth;
+    int WindowWidth = 600;
+    int WindowHeight = 600;
     GLuint texture_id;
     ~PrintText();
     
