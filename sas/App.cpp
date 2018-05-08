@@ -3,6 +3,8 @@
 static App* singleton;
 static Enemies* secondton;
 
+using namespace std;
+
 int gameTick = 0;
 void app_timer(int value){
     gameTick++;
@@ -207,10 +209,16 @@ void App::keyPress(unsigned char key) {
 
     if(key == 13)
     {
-        main_menu = false;
-        moving = true;
-        draw();
-        app_timer(1);
+        enterPress++;
+        if(enterPress == 1)
+        {
+            main_menu = false;
+            moving = true;
+            inGame = true;
+            draw();
+            app_timer(1);
+        }
+        
 
     }
     

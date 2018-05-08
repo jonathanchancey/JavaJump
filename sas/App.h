@@ -51,7 +51,9 @@ public:
     
     bool moving;
     bool game_over;
-    bool main_menu = true;
+    bool main_menu = true;          //enables the main menu to be shown
+    bool inGame = false;
+    int enterPress;
     
 };
 
