@@ -108,19 +108,19 @@ void Enemies::Adv(){
     }
 }
 void Enemies::addBone(){
-    bones.push_back(new Mob("images/moanBone.png", 0.99, 0, 0.3, 0.3, speed));
+    bones.push_back(new Mob("images/moanBoneBig.png", 0.99, 0, 0.3, 0.3, speed));
     if (speed < maxSpeed)
         speed += .001;
 }
 
 void Enemies::addLongBone(){
-    bones.push_back(new Mob("images/longBone.png", 0.99, 0, 0.3, 0.3, speed));
+    bones.push_back(new Mob("images/longBoneHalfBig.png", 0.99, -.13, 0.3, 0.15, speed));
     if (speed < maxSpeed)
         speed += .001;
 }
 
 void Enemies::addThiccBone(){
-    bones.push_back(new Mob("images/thiccBone.png", 0.99, 0, 0.3, 0.3, speed));
+    bones.push_back(new Mob("images/thiccBoneBig.png", 0.99, 0, 0.3, 0.3, speed));
     if (speed < maxSpeed)
         speed += .001;
 }
