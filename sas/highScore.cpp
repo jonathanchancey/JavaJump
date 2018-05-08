@@ -32,7 +32,7 @@ while(getline (scoreFile, strLine)){
     myfile << userScoreStr;
     strLine = userScoreStr;
   }
-  hiScoreWText = "High Score: " + strLine + " | ";
+  hiScoreWText = "Hi Score: " + strLine + " | ";
 
   }
 }
