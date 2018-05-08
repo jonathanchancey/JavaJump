@@ -9,8 +9,13 @@ Enemies::Enemies(){
     mobTimer = 0;
     minTimeBetwnMob = 42;
     addBone();
-    bgCounter = 0;
-    bg = new TexRect3d("images/groundThinHalfBig.png", -1.0, -.090, 10, .3);
+    bgCounter = -2;
+    firstRun = true;
+    displayFirstBG = true;
+    //bg = new TexRect3d("images/groundThinHalfBig.png", -1.0, -.090, 10, .3);
+    bgs.push_back(new TexRect3d("images/groundThinHalfBig.png", -1.0, -.090, 10, .3));
+    bgs.push_back(new TexRect3d("images/groundThinHalfBig.png", 9.0, -.090, 10, .3));
+    
 }
 void Enemies::reset(){
     speed = .02;
@@ -23,13 +28,33 @@ void Enemies::Adv(){
     mobTimer += 1;
     bgCounter += speed;
     
-    if (bgCounter > 8){
-        bgCounter = -2;
-        bgs.push_back(new TexRect3d("images/groundThinHalfBig.png", 1.0, -.090, 10, .3));
-    }
     
-    bg->moveLeft(speed);
-    bg->draw(1);
+//    if (firstRun){
+//        if (bgCounter > 10){
+//            printf("FirstRun\n");
+//            displayFirstBG = !displayFirstBG;
+//            bgs[1]->x = 1;
+//            bgCounter = -2;
+//            firstRun = false;
+//        }
+//    }
+//    else {
+        if (bgCounter > 8 && displayFirstBG){
+            printf("dfBG true\n");
+            bgs[0]->x = 1;
+            bgCounter = -2;
+            displayFirstBG = !displayFirstBG;
+        }
+        if (bgCounter > 8 && !displayFirstBG){
+            printf("dfBG false\n");
+            bgs[1]->x = 1;
+            bgCounter = -2;
+            displayFirstBG = !displayFirstBG;
+        }
+//    }
+    
+//    bg->moveLeft(speed);
+//    bg->draw(1);
     
     
     std::random_device rd; // obtain a random number from hardware
@@ -54,7 +79,7 @@ void Enemies::Adv(){
         }
         mobTimer = 0;
     }
-    for(int i = 0; i < bgs.size();i++){
+    for(int i = 0; i < bgs.size(); i++){
 //        if(bgs[i]->x < 10){
 //            bgs.erase(bgs.begin()+i-1);
 //        }
@@ -104,7 +129,7 @@ bool Enemies::ultraContainment(float x, float y){
 }
 
 void Enemies::draw(){
-    bg->draw(1);
+//    bg->draw(1);
 
     for (int i = 0; i < bgs.size(); i++){
         bgs[i]->draw(1);
