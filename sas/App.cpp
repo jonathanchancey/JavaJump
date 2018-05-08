@@ -89,7 +89,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     my = 0.0;
     //    gameTick = 0;
 
-    mainMenu = new TexRect("images/main_menu.png", -1, 1, 2, 2);
+    mainMenu = new TexRect("images/main_menu2.png", -1, 1, 2, 2);
 
     background = new TexRect("images/grey.png", -1, 1, 2, 2);
     //    secondton->addBone();
