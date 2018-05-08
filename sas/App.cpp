@@ -182,7 +182,7 @@ void App::draw() {
         if (moving){
                       endScore = gameTick/8;
             PrintText(560, 580, std::to_string(endScore));
-            PrintText(410, 580,hiScore->getScore());
+            PrintText(405, 580,hiScore->getScore());
           }
         ball->draw();
         gameOver->draw();
