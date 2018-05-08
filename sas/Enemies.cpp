@@ -7,7 +7,7 @@ Enemies::Enemies(){
     speed = .02; // default speed // global speed
     maxSpeed = .15; // how fast these bones can go
     mobTimer = 0;
-    minTimeBetwnMob = 42;
+    minTimeBetwnMob = 25;
     addBone();
     bgCounter = -2;
     firstRun = true;
@@ -15,6 +15,11 @@ Enemies::Enemies(){
     //bg = new TexRect3d("images/groundThinHalfBig.png", -1.0, -.090, 10, .3);
     bgs.push_back(new TexRect3d("images/groundThinHalfBig.png", -1.0, -.090, 10, .3));
     bgs.push_back(new TexRect3d("images/groundThinHalfBig.png", 9.0, -.090, 10, .3));
+    std::random_device rd; // obtain a random number from hardware
+    std::mt19937 eng(rd()); // seed the generator
+    //    std::uniform_int_distribution<> distr(0, 40); // define the range
+    std::uniform_int_distribution<int> uid(0,40); // random dice
+    rTime = uid(eng); // use rng as a generator
     
 }
 void Enemies::reset(){
@@ -57,15 +62,21 @@ void Enemies::Adv(){
 //    bg->draw(1);
     
     
-    std::random_device rd; // obtain a random number from hardware
-    std::mt19937 eng(rd()); // seed the generator
-//    std::uniform_int_distribution<> distr(0, 40); // define the range
-    std::uniform_int_distribution<int> uid(0,40); // random dice
-    rTime = uid(eng); // use rng as a generator
+
     
     
 
 //    rTime = (rand() % 100);
+//    if (rTime % 40){
+//        rTime = 2;
+//        if (mobTimer % 3 == 0){
+//            addBone();
+//        } else if (mobTimer % 3 == 1){
+//            addLongBone();
+//        } else {
+//            addThiccBone();
+//        }
+//    }
     
     if (mobTimer > (minTimeBetwnMob + rTime)){
 //        printf("rTime = %d\n",rTime);
@@ -77,6 +88,8 @@ void Enemies::Adv(){
         } else {
             addThiccBone();
         }
+        std::uniform_int_distribution<int> uid(0,40); // random dice
+        rTime = uid(eng); // use rng as a generator
         mobTimer = 0;
     }
     for(int i = 0; i < bgs.size(); i++){

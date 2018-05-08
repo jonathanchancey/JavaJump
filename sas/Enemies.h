@@ -28,6 +28,7 @@ public:
     TexRect3d* bg;
     bool displayFirstBG;
     bool firstRun;
+    std::mt19937 eng;
     
     std::vector<Mob*> bones;
     std::vector<TexRect3d*> bgs;
