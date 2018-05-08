@@ -45,13 +45,11 @@ void Enemies::Adv(){
 //    }
 //    else {
         if (bgCounter > 8 && displayFirstBG){
-            printf("dfBG true\n");
             bgs[0]->x = 1;
             bgCounter = -2;
             displayFirstBG = !displayFirstBG;
         }
         if (bgCounter > 8 && !displayFirstBG){
-            printf("dfBG false\n");
             bgs[1]->x = 1;
             bgCounter = -2;
             displayFirstBG = !displayFirstBG;
