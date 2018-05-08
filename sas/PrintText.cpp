@@ -33,17 +33,10 @@ PrintText::PrintText(int x, int y, std::string String){
 }
 
 void PrintText::display(int score, std::string hiScore){
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    
-    glEnable(GL_DEPTH_TEST);
-    
     int endScore = score/8;
-    
     glColor3f(0, 0, 0);
     PrintText(560, 580, std::to_string(endScore));
     PrintText(410, 580, hiScore);
-    
-    glutSwapBuffers();
 }
 
 PrintText::~PrintText(){
