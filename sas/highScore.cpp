@@ -1,49 +1,37 @@
-// #include <highScore.h>
-// #include <iostream>
-// #include <fstream>
-// #include <sstream>
-// using namespace std;
-//
-// ofstream scoreFile;
-//
-//
-// highScore::highScore(int x, int y){
-//
-//
-//
-//
-// }
+#include "highScore.h"
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+using namespace std;
+
+int currHi = 0;
+string strLine;
+string userScoreStr;
 
 
-// void highScore::addEneScore(){
-//
-// }
+highScore::highScore(int x){
 
-// bool highScore::checkScore(int userScore){
-//   string strLine;
-// scoreFile.open("scoreList.txt");
-// if(scoreFile.is_open()){
-//   while(getline(scoreFile,strLine)){
-//
-//   }
-//   scoreFile.close();
-// }
-//
-// }
+}
 
-// if(score > ){
-//   return true;
-// }
-//
-// else{
-//   return false;
-// // }
-// }
 
-// void highScore::storeScore(int score){
-//   //"scoreList.txt"
-//
-//   scoreFile.open("scoreList.txt");
-//   scoreFile << score;
-//   scoreFile.close();
-// }
+
+
+void highScore::checkScore(int userScore){
+
+ifstream scoreFile ("scoreList.txt");
+if(scoreFile.is_open()){
+while(getline (scoreFile, strLine)){
+  stringstream toConv(strLine);
+  toConv >> currHi;
+  if(userScore > currHi){
+    userScoreStr = to_string(userScore);
+    //scoreFile << userScoreStr;
+    ofstream myfile ("scoreList.txt");
+    myfile << userScoreStr;
+  }
+  }
+}
+scoreFile.close();
+
+}
