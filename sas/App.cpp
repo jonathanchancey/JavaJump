@@ -4,8 +4,6 @@
 
 static App* singleton;
 static Enemies* secondton;
-int WindowHeight = 600;
-int WindowWidth = 600;
 int endScore = 0;
 
 int gameTick = 0;
@@ -57,30 +55,6 @@ void app_timer(int value){
 
 
 }
-
-void App::PrintText(int x, int y, std::string String){
-    //(x,y) is from the bottom left of the window
-    glMatrixMode(GL_PROJECTION);
-    glPushMatrix();
-    glLoadIdentity();
-    glOrtho(0, WindowWidth, 0, WindowHeight, -1.0f, 1.0f);
-    glMatrixMode(GL_MODELVIEW);
-    glPushMatrix();
-    glLoadIdentity();
-    glPushAttrib(GL_DEPTH_TEST);
-    glDisable(GL_DEPTH_TEST);
-    glRasterPos2i(x,y);
-    for (int i=0; i<String.size(); i++)
-    {
-        glutBitmapCharacter(GLUT_BITMAP_9_BY_15, String[i]);
-    }
-    glPopAttrib();
-    glMatrixMode(GL_PROJECTION);
-    glPopMatrix();
-    glMatrixMode(GL_MODELVIEW);
-    glPopMatrix();
-}
-
 App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w, h){
     // Initialize state variables
     secondton = new Enemies();
@@ -178,11 +152,8 @@ void App::draw() {
         background->draw();
         secondton->draw();
         java->draw();
-        glColor3f(0, 0, 0);
         if (moving){
-                      endScore = gameTick/8;
-            PrintText(560, 580, std::to_string(endScore));
-            PrintText(410, 580,hiScore->getScore());
+        printtext->display(gameTick, hiScore->getScore());
           }
         ball->draw();
         gameOver->draw();

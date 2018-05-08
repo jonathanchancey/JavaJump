@@ -9,6 +9,7 @@
 #include <vector>
 #include <cstdlib>
 #include "highScore.h"
+#include "PrintText.hpp"
 #include <string>
 #include <iostream>
 
@@ -47,8 +48,8 @@ public:
     AnimatedRect* gameOver;
 
     highScore* hiScore;
-
-
+    
+    class PrintText* printtext;
 
 //    int gameTick;
 
