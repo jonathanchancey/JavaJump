@@ -17,6 +17,7 @@
 		1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E61E5ECD67006D7CBD /* App.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		17FD33DD208FF94C00C7FC56 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD33D9208FF4A300C7FC56 /* CoreFoundation.framework */; };
 		20015F85209ECD6F007FDD27 /* rand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 20015F84209ECD6F007FDD27 /* rand.cpp */; };
+		204F8A4C20A2189300E4DC04 /* highScore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 204F8A4A20A2189200E4DC04 /* highScore.cpp */; };
 		207250A420A0016E008C7D70 /* playerController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207250A220A0016D008C7D70 /* playerController.cpp */; };
 		207250A720A0162F008C7D70 /* mMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207250A620A0162F008C7D70 /* mMenu.cpp */; };
 		207250AA20A03FBD008C7D70 /* TexRect3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 207250A920A03FBC008C7D70 /* TexRect3d.cpp */; };
@@ -55,6 +56,8 @@
 		17FD33DB208FF55B00C7FC56 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSOIL.a; sourceTree = "<group>"; };
 		20015F83209ECD6F007FDD27 /* rand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rand.h; sourceTree = "<group>"; };
 		20015F84209ECD6F007FDD27 /* rand.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rand.cpp; sourceTree = "<group>"; };
+		204F8A4A20A2189200E4DC04 /* highScore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = highScore.cpp; sourceTree = "<group>"; };
+		204F8A4B20A2189300E4DC04 /* highScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = highScore.h; sourceTree = "<group>"; };
 		207250A220A0016D008C7D70 /* playerController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = playerController.cpp; sourceTree = "<group>"; };
 		207250A320A0016E008C7D70 /* playerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = playerController.h; sourceTree = "<group>"; };
 		207250A520A0162F008C7D70 /* mMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mMenu.h; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 				173FEF151AA63B1B006CCB85 /* OpenGL.framework */,
 				1749D6461E9D3D5C0038BC46 /* TexRect.cpp */,
 				1749D6471E9D3D5C0038BC46 /* TexRect.h */,
+				204F8A4A20A2189200E4DC04 /* highScore.cpp */,
+				204F8A4B20A2189300E4DC04 /* highScore.h */,
 				207250A920A03FBC008C7D70 /* TexRect3d.cpp */,
 				207250A820A03FBC008C7D70 /* TexRect3d.h */,
 				207250A220A0016D008C7D70 /* playerController.cpp */,
@@ -197,6 +202,7 @@
 				1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */,
 				1708B5422091F634007BA7C1 /* AnimatedRect.cpp in Sources */,
 				20015F85209ECD6F007FDD27 /* rand.cpp in Sources */,
+				204F8A4C20A2189300E4DC04 /* highScore.cpp in Sources */,
 				20A0A8FC209A73A0007C0EAD /* Enemies.cpp in Sources */,
 				20A0A8F9209A6C5B007C0EAD /* Mob.cpp in Sources */,
 				173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */,
