@@ -210,7 +210,7 @@ void App::keyPress(unsigned char key) {
     if(key == 13)
     {
         enterPress++;
-        if(enterPress == 1)
+        if(enterPress == 1)                 //fixed the issue of speeding up the game every time Enter was pressed
         {
             main_menu = false;
             moving = true;
