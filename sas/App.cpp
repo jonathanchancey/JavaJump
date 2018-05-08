@@ -4,8 +4,6 @@
 
 static App* singleton;
 static Enemies* secondton;
-int WindowHeight = 600;
-int WindowWidth = 600;
 int endScore = 0;
 
 int gameTick = 0;
@@ -14,12 +12,12 @@ void app_timer(int value){
     if (singleton->game_over){
         singleton->gameOver->advance();
     }
-
+    
     if (singleton->java->animating && (gameTick % 8 == 1)){
         //        printf("value = \n",gameTick);
         singleton->java->advanceFrame();
     }
-
+    
     if (singleton->moving){ // if gave is still going
         singleton->java->Adv();
         //        singleton->java->animate();
@@ -42,7 +40,7 @@ void app_timer(int value){
     if (singleton->right){
         singleton->java->moveRight(0.05);
     }
-
+    
     if (singleton->game_over){
         singleton->redraw();
         glutTimerFunc(100, app_timer, value);
@@ -54,33 +52,9 @@ void app_timer(int value){
             glutTimerFunc(16, app_timer, value);
         }
     }
-
-
+    
+    
 }
-
-void App::PrintText(int x, int y, std::string String){
-    //(x,y) is from the bottom left of the window
-    glMatrixMode(GL_PROJECTION);
-    glPushMatrix();
-    glLoadIdentity();
-    glOrtho(0, WindowWidth, 0, WindowHeight, -1.0f, 1.0f);
-    glMatrixMode(GL_MODELVIEW);
-    glPushMatrix();
-    glLoadIdentity();
-    glPushAttrib(GL_DEPTH_TEST);
-    glDisable(GL_DEPTH_TEST);
-    glRasterPos2i(x,y);
-    for (int i=0; i<String.size(); i++)
-    {
-        glutBitmapCharacter(GLUT_BITMAP_9_BY_15, String[i]);
-    }
-    glPopAttrib();
-    glMatrixMode(GL_PROJECTION);
-    glPopMatrix();
-    glMatrixMode(GL_MODELVIEW);
-    glPopMatrix();
-}
-
 App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w, h){
     // Initialize state variables
     secondton = new Enemies();
@@ -88,28 +62,28 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     mx = 0.0;
     my = 0.0;
     //    gameTick = 0;
-
-    mainMenu = new TexRect("images/main_menu2.png", -1, 1, 2, 2);
-
+    
+    mainMenu = new TexRect("images/main_menu.png", -1, 1, 2, 2);
+    
     background = new TexRect("images/grey.png", -1, 1, 2, 2);
     //    secondton->addBone();
-
+    
     ball = new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2);
-
+    
     java = new playerController(1, 2, -.75, 0, 0.4, 0.3);
-
+    
     gameOver = new AnimatedRect("images/gameOverJavaWobble.png", 8, 1, -1.0, 0.8, 2, 1.2);
-
+    
     hiScore = new highScore(endScore);
-
+    
     up = down = left = right = false;
-
+    
     moving = false;
     game_over = false;
     enterPress = 0;
-
+    
     app_timer(1);
-
+    
 }
 
 void App::specialKeyPress(int key){
@@ -161,29 +135,25 @@ void App::specialKeyUp(int key){
 }
 
 void App::draw() {
-
+    
     // Clear the screen
     glClear(GL_COLOR_BUFFER_BIT);
-
+    
     // Set background color to a disgusting pink
     glClearColor(1.0, .5, 0.5, 1.0);
-
+    
     // Set up the transformations stack
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-
+    
     if(!main_menu)
     {
         //        secondton
         background->draw();
         secondton->draw();
         java->draw();
-        glColor3f(0, 0, 0);
-        if (moving){
-                      endScore = gameTick/8;
-            PrintText(560, 580, std::to_string(endScore));
-            PrintText(410, 580,hiScore->getScore());
-          }
+        if (moving)
+            printtext->display(gameTick, hiScore->getScore());
         ball->draw();
         gameOver->draw();
         hiScore->checkScore(endScore);
@@ -192,7 +162,7 @@ void App::draw() {
     {
         mainMenu->draw();
     }
-
+    
     // We have been drawing everything to the back buffer
     // Swap the buffers to see the result of what we drew
     glFlush();
@@ -203,47 +173,47 @@ void App::mouseDown(float x, float y){
     // Update app state
     mx = x;
     my = y;
-
+    
 }
 
 void App::mouseDrag(float x, float y){
     // Update app state
     mx = x;
     my = y;
-
+    
 }
 
 void App::idle(){
-
+    
 }
 
 void App::keyPress(unsigned char key) {
     if (key == 27){
         // Exit the app when Esc key is pressed
-
+        
         delete ball;
         delete java;
         delete gameOver;
         delete background;
         delete this;
-
+        
         delete secondton;
-
+        
         exit(0);
     }
     if (key == 'r'){ // TODO delete the current bones
-
+        
         game_over = false;
         gameOver->stop();
         moving = true;
         secondton->reset();
         gameTick = 0;
-
+        
     }
     if (key == 'a'){
         secondton->addBone();
     }
-
+    
     if(key == 13)
     {
         enterPress++;
@@ -256,9 +226,9 @@ void App::keyPress(unsigned char key) {
             app_timer(1);
             //fuck off
         }
-
+        
     }
-
+    
     if (key == ' '){
         //        secondton->addBone();
         //        if (java->jumps > 0){
