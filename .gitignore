@@ -21,6 +21,7 @@ glutapp
 *.rar
 *.tar
 *.zip
+scoreList.txt
 
 # Logs and databases #
 ######################
