@@ -103,6 +103,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     
     moving = false;
     game_over = false;
+    enterPress = 0;
     
     app_timer(1);
     
