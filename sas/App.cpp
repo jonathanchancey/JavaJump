@@ -146,17 +146,22 @@ void App::draw() {
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     
-    if(!main_menu)
-    {
+    if(!main_menu){
+        int finalscore = 0;;
         //        secondton
         background->draw();
         secondton->draw();
         java->draw();
-        if (moving)
+        if (moving){
+            endScore = gameTick/8;
             printtext->display(gameTick, hiScore->getScore());
+        }
         ball->draw();
         gameOver->draw();
         hiScore->checkScore(endScore);
+        if (!moving){
+            //printtext->displayFinal(finalscore);
+        }
     }
     else
     {

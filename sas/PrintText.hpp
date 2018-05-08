@@ -25,6 +25,7 @@ public:
     
     PrintText(int x, int y, std::string String);
     void display(int, std::string String);
+    void displayFinal(int);
 
 };
 

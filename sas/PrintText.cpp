@@ -39,6 +39,15 @@ void PrintText::display(int score, std::string hiScore){
     PrintText(410, 580, hiScore);
 }
 
+void PrintText::displayFinal(int score){
+    int endScore = score/8;
+    glColor3f(0, 0, 0);
+    std::string final = "Final Score ";
+    PrintText(190, 100, final);
+    PrintText(300, 100, std::to_string(endScore));
+}
+
+
 PrintText::~PrintText(){
     //    SOIL_free_image_data(filename); not sure which to free
     
