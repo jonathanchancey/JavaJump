@@ -247,6 +247,7 @@ void App::keyPress(unsigned char key) {
             inGame = true;
             draw();
             app_timer(1);
+            //fuck off
         }
         
     }
