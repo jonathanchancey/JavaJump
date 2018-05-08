@@ -9,6 +9,8 @@
 #include <vector>
 #include <cstdlib>
 #include "highScore.h"
+#include <string>
+#include <iostream>
 
 
 class App: public GlutApp {
