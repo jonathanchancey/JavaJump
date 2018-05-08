@@ -26,6 +26,8 @@ public:
     void addLongBone();
     void addThiccBone();
     TexRect3d* bg;
+    bool displayFirstBG;
+    bool firstRun;
     
     std::vector<Mob*> bones;
     std::vector<TexRect3d*> bgs;

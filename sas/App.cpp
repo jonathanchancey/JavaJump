@@ -1,7 +1,11 @@
 #include "App.h"
+#include <iostream>   // std::cout
+#include <string>     // std::string, std::to_string
 
 static App* singleton;
 static Enemies* secondton;
+int WindowHeight = 600;
+int WindowWidth = 600;
 
 int gameTick = 0;
 void app_timer(int value){
@@ -9,15 +13,15 @@ void app_timer(int value){
     if (singleton->game_over){
         singleton->gameOver->advance();
     }
-
+    
     if (singleton->java->animating && (gameTick % 8 == 1)){
-//        printf("value = \n",gameTick);
+        //        printf("value = \n",gameTick);
         singleton->java->advanceFrame();
     }
     
     if (singleton->moving){ // if gave is still going
         singleton->java->Adv();
-//        singleton->java->animate();
+        //        singleton->java->animate();
         secondton->Adv(); // allows java to move, this is her tick loop thing
         if (secondton->ultraContainment(singleton->java->x+singleton->java->w/2, singleton->java->y-singleton->java->h/2)){ // checks if java is touching enemies
             singleton->moving = false;
@@ -53,21 +57,44 @@ void app_timer(int value){
     
 }
 
+void App::PrintText(int x, int y, std::string String){
+    //(x,y) is from the bottom left of the window
+    glMatrixMode(GL_PROJECTION);
+    glPushMatrix();
+    glLoadIdentity();
+    glOrtho(0, WindowWidth, 0, WindowHeight, -1.0f, 1.0f);
+    glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+    glLoadIdentity();
+    glPushAttrib(GL_DEPTH_TEST);
+    glDisable(GL_DEPTH_TEST);
+    glRasterPos2i(x,y);
+    for (int i=0; i<String.size(); i++)
+    {
+        glutBitmapCharacter(GLUT_BITMAP_9_BY_15, String[i]);
+    }
+    glPopAttrib();
+    glMatrixMode(GL_PROJECTION);
+    glPopMatrix();
+    glMatrixMode(GL_MODELVIEW);
+    glPopMatrix();
+}
+
 App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w, h){
     // Initialize state variables
     secondton = new Enemies();
     singleton = this;
     mx = 0.0;
     my = 0.0;
-//    gameTick = 0;
-
+    //    gameTick = 0;
+    
     mainMenu = new TexRect("images/main_menu.png", -1, 1, 2, 2);
     
     background = new TexRect("images/grey.png", -1, 1, 2, 2);
-//    secondton->addBone();
+    //    secondton->addBone();
     
     ball = new TexRect("images/bone.png", 0.99, 0, 0.2, 0.2);
-
+    
     java = new playerController(1, 2, -.75, 0, 0.4, 0.3);
     
     gameOver = new AnimatedRect("images/gameOverJavaWobble.png", 8, 1, -1.0, 0.8, 2, 1.2);
@@ -78,7 +105,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     game_over = false;
     
     app_timer(1);
-
+    
 }
 
 void App::specialKeyPress(int key){
@@ -130,7 +157,7 @@ void App::specialKeyUp(int key){
 }
 
 void App::draw() {
-
+    
     // Clear the screen
     glClear(GL_COLOR_BUFFER_BIT);
     
@@ -143,10 +170,13 @@ void App::draw() {
     
     if(!main_menu)
     {
-//        secondton
+        //        secondton
         background->draw();
         secondton->draw();
         java->draw();
+        glColor3f(0, 0, 0);
+        if (moving)
+            PrintText(560, 580, std::to_string(gameTick/8));
         ball->draw();
         gameOver->draw();
     }
@@ -165,18 +195,18 @@ void App::mouseDown(float x, float y){
     // Update app state
     mx = x;
     my = y;
-
+    
 }
 
 void App::mouseDrag(float x, float y){
     // Update app state
     mx = x;
     my = y;
-
+    
 }
 
 void App::idle(){
-
+    
 }
 
 void App::keyPress(unsigned char key) {
@@ -199,39 +229,40 @@ void App::keyPress(unsigned char key) {
         gameOver->stop();
         moving = true;
         secondton->reset();
+        gameTick = 0;
         
     }
     if (key == 'a'){
         secondton->addBone();
     }
-
+    
     if(key == 13)
     {
         main_menu = false;
         moving = true;
         draw();
         app_timer(1);
-
+        
     }
     
     if (key == ' '){
-//        secondton->addBone();
-//        if (java->jumps > 0){
-//            java->jumps -= 1;
-//            java->velY = .06;
-//        }
-//        ball->x = 0;
-//        ball->y = 0.67;
-//        ball->yinc = 0.01;
-//        ball->xinc = 0.01;
-//        ball->rising = false;
-//        game_over = false;
-//        gameOver->stop();
-//        moving = true;
+        //        secondton->addBone();
+        //        if (java->jumps > 0){
+        //            java->jumps -= 1;
+        //            java->velY = .06;
+        //        }
+        //        ball->x = 0;
+        //        ball->y = 0.67;
+        //        ball->yinc = 0.01;
+        //        ball->xinc = 0.01;
+        //        ball->rising = false;
+        //        game_over = false;
+        //        gameOver->stop();
+        //        moving = true;
     }
 }
 void App::keyUp(unsigned char key) {
-//    if (key == ' '){
-//        java->gravity = .006;
-//    }
+    //    if (key == ' '){
+    //        java->gravity = .006;
+    //    }
 }
