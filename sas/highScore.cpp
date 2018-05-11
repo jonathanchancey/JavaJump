@@ -27,7 +27,6 @@ while(getline (scoreFile, strLine)){
   toConv >> currHi;
   if(userScore > currHi){
     userScoreStr = to_string(userScore);
-    //scoreFile << userScoreStr;
     ofstream myfile ("scoreList.txt");
     myfile << userScoreStr;
     strLine = userScoreStr;
