@@ -30,5 +30,5 @@ Windows:
  
 macOS:
  - Use the glutapp.xcodeproj file to open the project in XCode
- - Navigate to Product->Scheme->Edit->Run->Options->Working Directory and check "Use cutom working directory" and enter $(SRCROOT)
+ - Navigate to Product->Scheme->Edit->Run->Options->Working Directory and check "Use custom working directory" and enter $(SRCROOT)
  - It has been tested with XCode 8 on macOS Sierra 10.12
